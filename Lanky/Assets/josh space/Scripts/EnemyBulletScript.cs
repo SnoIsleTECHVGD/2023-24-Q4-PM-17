@@ -22,7 +22,7 @@ public class EnemyBulletScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.player)
+        if (collision.gameObject)
         {
             Destroy(gameObject);
         }
