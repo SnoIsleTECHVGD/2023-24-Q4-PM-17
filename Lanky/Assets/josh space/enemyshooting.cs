@@ -5,7 +5,7 @@ using UnityEngine;
 public class enemyshooting : MonoBehaviour
 {
     public Transform FirePoint;
-    public  GameObject bullet;
+    public GameObject bullet;
     public Transform bulletpos;
     public float distance;
     public float distanceBetween;
@@ -44,6 +44,7 @@ public class enemyshooting : MonoBehaviour
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(FirePoint.up * bulletForce, ForceMode2D.Force);
 
-       
+
     }
 }
+    
