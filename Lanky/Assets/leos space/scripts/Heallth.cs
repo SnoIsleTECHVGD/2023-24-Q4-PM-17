@@ -7,11 +7,11 @@ public class Heallth : MonoBehaviour
 {
 
 
-    public float health; 
+    public static float health = 100; 
     
     void Update()
     {
-        health = 100; 
+       
 
 
         if ( health == 0)
