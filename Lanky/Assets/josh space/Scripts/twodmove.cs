@@ -12,7 +12,7 @@ public class twodmove : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
-    [SerializeField] public KeyCode jump;
+    [SerializeField] public KeyCode jump ,jump1, slam;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,21 +28,27 @@ public class twodmove : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpPower);
         }
-
-
         
+        if(Input.GetKey(jump1) && IsGrounded())
+        {
+            rb.velocity = new Vector2(rb.velocity.x, jumpPower);
+        }
+
+
         Flip();
 
-
-       if(rb.velocity.y <0)
+        if (Input.GetKey(slam))
         {
-            rb.gravityScale = rb.gravityScale * 2;
-
+           
+                rb.gravityScale = rb.gravityScale + .09f;
+           
+            
         }
-       if( IsGrounded() )
+        if (IsGrounded())
         {
-            rb.gravityScale = 1;
+            rb.gravityScale = 2;
         }
+
     }
     private void FixedUpdate() 
     {
