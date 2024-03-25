@@ -733,11 +733,11 @@ PlayerSettings:
     m_VersionName: 
   apiCompatibilityLevel: 6
   activeInputHandler: 0
-  cloudProjectId: 
+  cloudProjectId: e16fbda2-6012-4b6f-b512-8d9a09b2dfa5
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 
-  organizationId: 
+  projectName: Lanky
+  organizationId: ancientsaiyan315
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   playerDataPath: 
