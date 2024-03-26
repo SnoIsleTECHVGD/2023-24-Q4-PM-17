@@ -3,26 +3,22 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public class Heallth : MonoBehaviour
+public class Heart1 : MonoBehaviour
 {
 
 
-    public static float health = 100; 
+    public static float health = 60;
     
+
     void Update()
     {
        
 
 
-        if ( health == 0)
+        if ( health == 50 )
         {
             gameObject.SetActive(false);
         }
 
-
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            health = 0;
-        }
     }
 }

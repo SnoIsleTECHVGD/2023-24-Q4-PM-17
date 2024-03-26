@@ -14,6 +14,6 @@ public class heartGone : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Heallth.health = 0;
+        Heart1.health -= 10;
     }
 }
