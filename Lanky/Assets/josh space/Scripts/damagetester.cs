@@ -8,6 +8,6 @@ public class damagetester : MonoBehaviour
     public statsManager enemyAtm;
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F11)) ;
+        if (Input.GetKeyDown(KeyCode.Escape)) ;
     }
 }
