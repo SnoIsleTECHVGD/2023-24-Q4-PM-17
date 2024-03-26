@@ -46,7 +46,7 @@ public class twodmove : MonoBehaviour
         }
         if (IsGrounded())
         {
-            rb.gravityScale = 2;
+            rb.gravityScale = 5f;
         }
 
     }

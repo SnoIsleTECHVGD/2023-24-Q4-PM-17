@@ -13,6 +13,7 @@ public class enemyshooting : MonoBehaviour
     public GameObject player;
     public GameObject bulletPrefab;
     public float bulletForce = 20f;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +31,7 @@ public class enemyshooting : MonoBehaviour
         {
             timer += Time.deltaTime;
 
-            if (timer > 2)
+            if (timer > 3)
             {
                 timer = 0;
                 shoot();
