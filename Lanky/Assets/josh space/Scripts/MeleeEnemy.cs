@@ -5,15 +5,15 @@ using UnityEngine;
 public class MeleeEnemy : MonoBehaviour
 {
     public GameObject PointA;
-    public Gamebject pointb;
-    private Ridgidbody2D rb;
-    private Animater anima;
-    private Tranform currentPoint;
+    public GameObject pointb;
+    private Rigidbody2D rb;
+    private Animator anima;
+    private Transform currentPoint;
     public float speed; 
     void Start()
     {
-        rb = GetConponent<Ridgidbody2D>();
-        anima = GetConponent<Animater>();
+        rb = GetComponent<Rigidbody2D>();
+        anima = GetComponent<Animator>();
         currentPoint = pointb.transform;
         anima.SetBool("isRunning", true);
     }
@@ -37,10 +37,10 @@ public class MeleeEnemy : MonoBehaviour
             Flip();
             currentPoint = PointA.transform;
         }
-        if (Vector2.Distance(transform.position, currentPoint.position) < 0.5f && currentPoint == pointA.transform)
+        if (Vector2.Distance(transform.position, currentPoint.position) < 0.5f && currentPoint == PointA.transform)
         {
             Flip();
-            currentPoint = Pointb.transform;
+            currentPoint = pointb.transform;
         }
 
     }
@@ -53,9 +53,9 @@ public class MeleeEnemy : MonoBehaviour
 
     private  void OnDrawGizmos()
     {
-        Gizmos.DrawWireSphere(pointA.transform.position, 0.5f);
+        Gizmos.DrawWireSphere(PointA.transform.position, 0.5f);
         Gizmos.DrawWireSphere(pointb.transform.position, 0.5f);
 
-        Gizmos.DrawLine(pointb.transform.position, pointA.tranform.position);
+        Gizmos.DrawLine(pointb.transform.position, PointA.transform.position);
     }
 }
