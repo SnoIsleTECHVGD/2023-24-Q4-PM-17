@@ -6,7 +6,10 @@ using UnityEngine;
 public class PauseMenu : MonoBehaviour
 {
     public static bool GamePaused = false;
-    public GameObject pauseMenuUI;
+    public GameObject [] menuUI;
+    
+  
+  
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -23,16 +26,20 @@ public class PauseMenu : MonoBehaviour
         
     }
 
-     public void Resume ()
+    public void Resume()
     {
-        pauseMenuUI.SetActive(false);
+        menuUI[0].SetActive(false);
+        menuUI[1].SetActive(false);
+        menuUI[2].SetActive(false);
+        menuUI[3].SetActive(false);
         Time.timeScale = 1f;
         GamePaused = false;
     }
 
     void Pause()
     {
-        pauseMenuUI.SetActive(true);
+        menuUI[0].SetActive(true);
+      
         Time.timeScale = 0f;
         GamePaused = true;
     }
