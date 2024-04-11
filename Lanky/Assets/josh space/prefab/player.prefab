@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 5509953892419697972}
   - component: {fileID: 3319227555213111954}
   - component: {fileID: 689618211871635318}
+  - component: {fileID: 5486603640324213027}
   m_Layer: 0
   m_Name: player
   m_TagString: player
@@ -155,7 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  jumpPower: 4.5
+  jumpPower: 12
   rb: {fileID: 5646572839108543233}
   groundCheck: {fileID: 4422978178661952371}
   groundLayer:
@@ -315,3 +316,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   attack: 10
+--- !u!114 &5486603640324213027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5646572839108543235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebd76bbea0c44a748b2a5e5bbc6dec7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HealthP: 3
+  NumOfHearts: 3
+  hearts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  fullHeart: {fileID: 2118370680, guid: e0a4e875c91471a4ba1ae1dd8b59a2b2, type: 3}
+  emptyheart: {fileID: -1725219058, guid: e0a4e875c91471a4ba1ae1dd8b59a2b2, type: 3}
