@@ -2,16 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Heart4 : Heart1
+public class clickUi : MonoBehaviour
 {
-   
-
-  
+    public Animator animator;
     void Update()
     {
-        if (health == 20)
+        if (Input.GetMouseButtonDown(0))
         {
-            gameObject.SetActive(false);
+            
         }
     }
 }
