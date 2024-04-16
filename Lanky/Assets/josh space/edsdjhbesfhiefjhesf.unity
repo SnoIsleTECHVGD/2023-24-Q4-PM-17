@@ -1803,8 +1803,7 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5486603640324213027, guid: da455d92c517bb543bfa592b620c0747, type: 3}
-<<<<<<< HEAD
-=======
+
       propertyPath: hearts.Array.size
       value: 6
       objectReference: {fileID: 0}
@@ -1833,8 +1832,7 @@ PrefabInstance:
       propertyPath: hearts.Array.data[5]
       value: 
       objectReference: {fileID: 263722900}
-<<<<<<< HEAD
-=======
+
     - target: {fileID: 5486603640324213027, guid: da455d92c517bb543bfa592b620c0747, type: 3}
       propertyPath: hearts.Array.data[6]
       value: 

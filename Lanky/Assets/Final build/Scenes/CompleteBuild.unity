@@ -392,6 +392,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &227409504 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 500873133284586713, guid: 55609eb1df806f7439eb551aef217e51, type: 3}
+  m_PrefabInstance: {fileID: 1358511866}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &337696951
 GameObject:
   m_ObjectHideFlags: 0
@@ -655,7 +666,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 926832709295863153, guid: da455d92c517bb543bfa592b620c0747, type: 3}
       propertyPath: speed
-      value: 4
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 926832709295863153, guid: da455d92c517bb543bfa592b620c0747, type: 3}
       propertyPath: jumpPower
@@ -665,10 +676,34 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3319227555213111954, guid: da455d92c517bb543bfa592b620c0747, type: 3}
+      propertyPath: m_SortingOrder
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486603640324213027, guid: da455d92c517bb543bfa592b620c0747, type: 3}
+      propertyPath: fullHeart
+      value: 
+      objectReference: {fileID: 21300000, guid: 8654ea84f7874d542bdb1821b05a96c2, type: 3}
+    - target: {fileID: 5486603640324213027, guid: da455d92c517bb543bfa592b620c0747, type: 3}
+      propertyPath: emptyheart
+      value: 
+      objectReference: {fileID: 21300000, guid: 207824b586275474797b10d97b0e20c9, type: 3}
     - target: {fileID: 5486603640324213027, guid: da455d92c517bb543bfa592b620c0747, type: 3}
       propertyPath: hearts.Array.size
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5486603640324213027, guid: da455d92c517bb543bfa592b620c0747, type: 3}
+      propertyPath: hearts.Array.data[0]
+      value: 
+      objectReference: {fileID: 227409504}
+    - target: {fileID: 5486603640324213027, guid: da455d92c517bb543bfa592b620c0747, type: 3}
+      propertyPath: hearts.Array.data[1]
+      value: 
+      objectReference: {fileID: 1142452839}
+    - target: {fileID: 5486603640324213027, guid: da455d92c517bb543bfa592b620c0747, type: 3}
+      propertyPath: hearts.Array.data[2]
+      value: 
+      objectReference: {fileID: 1708549960}
     - target: {fileID: 5646572839108543233, guid: da455d92c517bb543bfa592b620c0747, type: 3}
       propertyPath: m_GravityScale
       value: 1
@@ -1464,6 +1499,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1142452839 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 500873134155221663, guid: 55609eb1df806f7439eb551aef217e51, type: 3}
+  m_PrefabInstance: {fileID: 1358511866}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1355002706
 GameObject:
   m_ObjectHideFlags: 0
@@ -1474,7 +1520,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1355002708}
   - component: {fileID: 1355002707}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GameObject (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1997,6 +2043,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1708549960 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 500873135204072999, guid: 55609eb1df806f7439eb551aef217e51, type: 3}
+  m_PrefabInstance: {fileID: 1358511866}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1843346593
 GameObject:
   m_ObjectHideFlags: 0
