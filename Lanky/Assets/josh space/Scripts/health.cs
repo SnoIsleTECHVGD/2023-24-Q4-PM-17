@@ -49,6 +49,13 @@ public class health : MonoBehaviour
             HealthP -= 1;
 
         }
-    }
 
+        if (collision.gameObject.tag == "healthing")
+        {
+            HealthP += NumOfHearts;
+            Debug.Log("you have healed");
+
+        }
+    }
+    
 }
