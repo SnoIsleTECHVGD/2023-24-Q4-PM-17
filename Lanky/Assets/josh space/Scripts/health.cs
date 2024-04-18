@@ -10,10 +10,8 @@ public class health : MonoBehaviour
 
     public int HealthP ;
     public int NumOfHearts;
-    public Image[] hearts;
-    public Sprite fullHeart;
-    public Sprite emptyheart;
-
+    public Animator[] hearts;
+   
     void Update()
     {
 
@@ -23,21 +21,25 @@ public class health : MonoBehaviour
         }
         for (int i = 0; i < hearts.Length; i++)
         {
-            if (i < HealthP)
+            if ( i - 1   >= HealthP)
             {
-                hearts[i].sprite = fullHeart;
+                hearts[i].SetBool("HeartOn",true);
             }
             else
             {
-                hearts[i].sprite = emptyheart;
+                hearts[i].SetBool("HeartOn", false);
             }
-            if(i< NumOfHearts)
-            {
-                hearts[i].enabled = true;
-            } else
-            {
-                hearts[i].enabled = false; 
-            }
+           // if(i< NumOfHearts)
+         //   {
+             //   hearts[i].enabled = true;
+          //  } else
+           // {
+          //      hearts[i].enabled = false; 
+           // }
+        }
+        if( HealthP <= 0)
+        {
+            hearts[0].SetBool("HeartOn", false);
         }
       
     }
