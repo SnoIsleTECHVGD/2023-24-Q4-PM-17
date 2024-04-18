@@ -1275,7 +1275,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.8200073, y: -2.4129944}
+  m_AnchoredPosition: {x: -0.8200073, y: -2.413025}
   m_SizeDelta: {x: 1.6400452, y: 1.9108276}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &500873133764495869
@@ -1438,11 +1438,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38bb3405a9ba37e4da8378854e0a405d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuUI:
-  - {fileID: 500873134868872875}
-  - {fileID: 500873134076481179}
-  - {fileID: 500873134674759068}
-  - {fileID: 500873133764495864}
+  menuUI: []
 --- !u!1 &500873133793891582
 GameObject:
   m_ObjectHideFlags: 0
@@ -1912,7 +1908,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 4.299988, y: -3.27005}
+  m_AnchoredPosition: {x: 4.299988, y: -3.2700806}
   m_SizeDelta: {x: 1.6400452, y: 1.9108276}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &500873134076481180
@@ -3391,7 +3387,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.8200073, y: -2.4129944}
+  m_AnchoredPosition: {x: -0.8200073, y: -2.413025}
   m_SizeDelta: {x: 1.6400452, y: 1.9108276}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &500873134674758753
@@ -5298,7 +5294,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000095367, y: 214.9}
+  m_AnchoredPosition: {x: 0.0000095367, y: 192.1}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &500873135350783647
@@ -6526,6 +6522,7 @@ GameObject:
   - component: {fileID: 1718233895016939046}
   - component: {fileID: 2837229290023381397}
   - component: {fileID: 2163153696842672443}
+  - component: {fileID: 3224992785706073216}
   m_Layer: 5
   m_Name: Mute Button
   m_TagString: Untagged
@@ -6660,6 +6657,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &3224992785706073216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8981701488991331305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a4ac13ecc25ec54aacb5b9578e57b09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioListener: {fileID: 0}
 --- !u!1 &8993273294201207993
 GameObject:
   m_ObjectHideFlags: 0

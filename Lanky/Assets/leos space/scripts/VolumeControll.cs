@@ -11,8 +11,12 @@ public class VolumeControll : MonoBehaviour
 
     public void AudioOn()
     {
-
+        audioListener.enabled = true;
     }
 
+    public void AudioOff()
+    {
+        audioListener.enabled = false;
+    }
 
 }
