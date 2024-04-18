@@ -6,7 +6,14 @@ public class PlayerControllerAndAnimator : MonoBehaviour
 {
     private Rigidbody2D rb;
     public float speed;
+    public float jumpForce;
     private float moveInput;
+
+    private bool isGrounded;
+    public Transform feetPos;
+    public float checkRadius;
+    public LayerMask whatIsGrounded;
+
     
     void Start()
     {
@@ -16,8 +23,18 @@ public class PlayerControllerAndAnimator : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        moveInput = moveInput.GetAxisRaw("Horiontal");
+        moveInput = Input.GetAxisRaw("Horiontal");
         rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
 
+    }
+
+    private void Update()
+    {
+        isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGrounded);
+
+        if(isGrounded == true && Input.GetKeyDown(KeyCode.Space))
+        {
+            rb.velocity = Vector2.up * jumpForce;
+        }
     }
 }
