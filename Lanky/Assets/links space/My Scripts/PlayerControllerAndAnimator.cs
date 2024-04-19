@@ -17,7 +17,9 @@ public class PlayerControllerAndAnimator : MonoBehaviour
     private float jumpTimeCounter;
     public float jumpTime;
     private bool isJumping;
+    private bool doubleJump;
 
+    private bool facingRight = true;
 
     private Animator anim;
     
@@ -26,20 +28,44 @@ public class PlayerControllerAndAnimator : MonoBehaviour
         anim = GetComponent<Animator>();
         rb = GetComponentInParent<Rigidbody2D>();
     }
-
-    // Update is called once per frame
     void FixedUpdate()
     {
-        moveInput = Input.GetAxisRaw("Horizontal");
-        rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
 
+        if (facingRight == false && moveInput > 0)
+        {
+            Flip();
+        }
+        else if(facingRight == true && moveInput < 0)
+        {
+            Flip();
+        }
     }
 
     void Update()
     {
         isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGrounded);
 
-        if(moveInput == 0)
+        if(isGrounded == true && Input.GetKeyDown(KeyCode.W))
+        {
+            anim.SetTrigger("takeOff");
+            isJumping = true;
+            doubleJump = false;
+            jumpTimeCounter = jumpTime;
+            rb.velocity = Vector2.up * jumpForce;
+            anim.SetBool("isJumping", false);
+        }
+
+        if (isGrounded == true)
+        {
+            _ = isJumping == false;
+            anim.SetBool("isJumping", false);
+        }
+        else
+        {
+            anim.SetBool("isJumping", true);
+        }
+
+        if (moveInput == 0)
         {
             anim.SetBool("isRunning", false);
         }
@@ -48,29 +74,7 @@ public class PlayerControllerAndAnimator : MonoBehaviour
             anim.SetBool("isRunning", true);
         }
 
-        if(moveInput > 0)
-        {
-            transform.eulerAngles = new Vector3(0, 0, 0);
-        }
-        else if(moveInput < 0)
-        {
-            transform.eulerAngles = new Vector3(0, 180, 0);
-        }
-
-        if(isGrounded == true && Input.GetKeyDown(KeyCode.Space))
-        {
-            anim.SetTrigger("takeOff");
-            isJumping = true;
-            jumpTimeCounter = jumpTime;
-            rb.velocity = Vector2.up * jumpForce;
-            anim.SetBool("isJumping", false);
-        }
-        else
-        {
-            anim.SetBool("isJumping", true);
-        }
-
-        if (Input.GetKey(KeyCode.Space) && isJumping == true)
+        if (Input.GetKey(KeyCode.W) && isJumping == true)
         {
             if(jumpTimeCounter > 0)
             {
@@ -83,9 +87,41 @@ public class PlayerControllerAndAnimator : MonoBehaviour
             }
             
         }
-        if (Input.GetKeyUp(KeyCode.Space))
+
+        if (Input.GetKeyUp(KeyCode.W))
         {
             isJumping = false;
         }
+
+        if (isGrounded == false && doubleJump == false && Input.GetKeyDown(KeyCode.W))
+        {
+            isJumping = true;
+            doubleJump = true;
+            isJumping = true;
+            jumpTimeCounter = jumpTime;
+            rb.velocity = Vector2.up * jumpForce;
+        }
+
+        float moveInput = Input.GetAxisRaw("Horizontal");
+        rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
+
+
+        if (moveInput < 0)
+        {
+            transform.eulerAngles = new Vector3(0, 180, 0);
+        }
+        else if (moveInput > 0)
+        {
+            transform.eulerAngles = new Vector3(0, 0, 0);
+        }
+        
+    }
+
+    void Flip()
+    {
+        facingRight = !facingRight;
+        Vector3 Scaler = transform.localScale;
+        Scaler.x *= -1;
+        transform.localScale = Scaler;
     }
 }
