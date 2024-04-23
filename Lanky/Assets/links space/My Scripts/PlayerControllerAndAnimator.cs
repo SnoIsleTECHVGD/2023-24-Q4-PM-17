@@ -11,39 +11,36 @@ public class PlayerControllerAndAnimator : MonoBehaviour
     private bool isGrounded;
     public Transform feetPos;
     public float checkRadius;
-    public LayerMask whatIsGrounded;
+    public LayerMask whatIsGround;
 
     private float jumpTimeCounter;
     public float jumpTime;
     private bool isJumping;
     private bool doubleJump;
 
-    private bool facingRight = true;
-
     private Animator anim;
     
-    void Start()
+    private void Start()
     {
         anim = GetComponent<Animator>();
         rb = GetComponentInParent<Rigidbody2D>();
     }
 
-    void Update()
+    private void Update()
     {
-        isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGrounded);
+        isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
 
         if(isGrounded == true && Input.GetKeyDown(KeyCode.W))
         {
             anim.SetTrigger("takeOff");
             isJumping = true;
-            doubleJump = false;
             jumpTimeCounter = jumpTime;
             rb.velocity = Vector2.up * jumpForce;
         }
 
         if (isGrounded == true)
         {
-            isJumping = false;
+            doubleJump = false;
             anim.SetBool("isJumping", false);
         }
         else
