@@ -7,57 +7,60 @@ public class health : MonoBehaviour
 {
 
     private Rigidbody2D rb;
-
-    public int HealthP ;
+    public GameObject player;
+    public int HealthP;
     public int NumOfHearts;
     public Animator[] hearts;
-   
+
     void Update()
     {
+        if (HealthP <= 0)
+        {
+            Destroy(player);
 
-        if(HealthP > NumOfHearts)
+
+
+        }
+
+        if (HealthP > NumOfHearts)
         {
             HealthP = NumOfHearts;
         }
         for (int i = 0; i < hearts.Length; i++)
         {
-            if ( i-1 >= HealthP)
+            if (i - 1 >= HealthP)
             {
-                hearts[i].SetBool("HeartOn",true);
+                hearts[i].SetBool("HeartOn", true);
             }
             else
             {
                 hearts[i].SetBool("HeartOn", false);
             }
-           // if(i< NumOfHearts)
-         //   {
-             //   hearts[i].enabled = true;
-          //  } else
-           // {
-          //      hearts[i].enabled = false; 
-           // }
+            // the player will need to die when the helath gets to 0
+          
+
+
+
+
         }
-       // if( HealthP <= 0)
-      //  {
-      //   hearts[0].SetBool("HeartOn", false);
-       // }
-      
+
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-
-        if (collision.gameObject.tag == "dmgthing")
+        private void OnCollisionEnter2D(Collision2D collision)
         {
-            HealthP -= 1;
 
+            if (collision.gameObject.tag == "dmgthing")
+            {
+                HealthP -= 1;
+
+            }
+
+            if (collision.gameObject.tag == "healthing")
+            {
+                HealthP += NumOfHearts;
+                Debug.Log("you have healed");
+
+            }
         }
 
-        if (collision.gameObject.tag == "healthing")
-        {
-            HealthP += NumOfHearts;
-            Debug.Log("you have healed"); 
-
-        }
     }
-    
-}
+
