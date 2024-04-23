@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 61065800}
   - component: {fileID: 61065799}
   m_Layer: 5
-  m_Name: Next
+  m_Name: 'Title '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -207,9 +207,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Buttons, Assembly-CSharp
-        m_MethodName: Play
+      - m_Target: {fileID: 125999823}
+        m_TargetAssemblyTypeName: CreditsManager, Assembly-CSharp
+        m_MethodName: LoadTitle
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -567,7 +567,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'next '
+  m_text: title
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: eb84f81ee744c6a40b6efc97e3892623, type: 2}
   m_sharedMaterial: {fileID: -2629812992405365534, guid: eb84f81ee744c6a40b6efc97e3892623, type: 2}
@@ -863,9 +863,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 125999823}
-        m_TargetAssemblyTypeName: CreditsManager, Assembly-CSharp
-        m_MethodName: Credits2
+      - m_Target: {fileID: 125999818}
+        m_TargetAssemblyTypeName: Buttons, Assembly-CSharp
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1066,7 +1066,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 125999823}
         m_TargetAssemblyTypeName: CreditsManager, Assembly-CSharp
-        m_MethodName: Credits2Back
+        m_MethodName: Credits5Back
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
