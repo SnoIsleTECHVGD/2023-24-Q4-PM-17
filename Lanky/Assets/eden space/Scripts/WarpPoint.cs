@@ -5,16 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class WarpPoint : MonoBehaviour
 {
+    public static bool ignorewarp = false;
     public static Vector2 Warp = new Vector2(-18.25f, 3.71f);
     public static Vector2 Warp2 = new Vector2(101.62f, 0.77f);
 
     public GameObject player;
     public string RoomName;
+    public bool ignoreQwarp;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Warp = player.transform.position;
+        
+        ignorewarp = ignoreQwarp;
         SceneManager.LoadScene(RoomName);
-
     }
     void Start()
     {
