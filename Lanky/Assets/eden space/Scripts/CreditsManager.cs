@@ -41,4 +41,8 @@ public class CreditsManager : MonoBehaviour
     {
         SceneManager.LoadScene("Credits4");
     }
+    public void LoadTitle()
+    {
+        SceneManager.LoadScene("Title");
+    }
 }
