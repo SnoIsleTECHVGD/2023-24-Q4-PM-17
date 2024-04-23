@@ -383,9 +383,9 @@ MonoBehaviour:
   jumpForce: 10
   feetPos: {fileID: 1165669032}
   checkRadius: 0.3
-  whatIsGrounded:
+  whatIsGround:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 0
   jumpTime: 0.35
 --- !u!212 &176259430
 SpriteRenderer:
@@ -569,7 +569,6 @@ GameObject:
   - component: {fileID: 309537467}
   - component: {fileID: 309537466}
   - component: {fileID: 309537469}
-  - component: {fileID: 309537471}
   m_Layer: 0
   m_Name: Lanky_Character
   m_TagString: Untagged
@@ -713,26 +712,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &309537471
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 309537465}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69f485b589ab53d4fba8e71b62bce93f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  jumpForce: 8
-  feetPos: {fileID: 1557519055}
-  checkRadius: 0.3
-  whatIsGrounded:
-    serializedVersion: 2
-    m_Bits: 128
-  jumpTime: 0.35
 --- !u!1 &310178355
 GameObject:
   m_ObjectHideFlags: 0
