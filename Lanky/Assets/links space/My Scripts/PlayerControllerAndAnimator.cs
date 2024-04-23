@@ -7,7 +7,6 @@ public class PlayerControllerAndAnimator : MonoBehaviour
     private Rigidbody2D rb;
     public float speed;
     public float jumpForce;
-    private float moveInput;
 
     private bool isGrounded;
     public Transform feetPos;
@@ -28,18 +27,6 @@ public class PlayerControllerAndAnimator : MonoBehaviour
         anim = GetComponent<Animator>();
         rb = GetComponentInParent<Rigidbody2D>();
     }
-    void FixedUpdate()
-    {
-
-        if (facingRight == false && moveInput > 0)
-        {
-            Flip();
-        }
-        else if(facingRight == true && moveInput < 0)
-        {
-            Flip();
-        }
-    }
 
     void Update()
     {
@@ -52,26 +39,16 @@ public class PlayerControllerAndAnimator : MonoBehaviour
             doubleJump = false;
             jumpTimeCounter = jumpTime;
             rb.velocity = Vector2.up * jumpForce;
-            anim.SetBool("isJumping", false);
         }
 
         if (isGrounded == true)
         {
-            _ = isJumping == false;
+            isJumping = false;
             anim.SetBool("isJumping", false);
         }
         else
         {
             anim.SetBool("isJumping", true);
-        }
-
-        if (moveInput == 0)
-        {
-            anim.SetBool("isRunning", false);
-        }
-        else
-        {
-            anim.SetBool("isRunning", true);
         }
 
         if (Input.GetKey(KeyCode.W) && isJumping == true)
@@ -105,6 +82,14 @@ public class PlayerControllerAndAnimator : MonoBehaviour
         float moveInput = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
 
+        if (moveInput == 0)
+        {
+            anim.SetBool("isRunning", false);
+        }
+        else
+        {
+            anim.SetBool("isRunning", false);
+        }
 
         if (moveInput < 0)
         {
@@ -115,13 +100,5 @@ public class PlayerControllerAndAnimator : MonoBehaviour
             transform.eulerAngles = new Vector3(0, 0, 0);
         }
         
-    }
-
-    void Flip()
-    {
-        facingRight = !facingRight;
-        Vector3 Scaler = transform.localScale;
-        Scaler.x *= -1;
-        transform.localScale = Scaler;
     }
 }
