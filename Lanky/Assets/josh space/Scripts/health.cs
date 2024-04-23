@@ -21,7 +21,7 @@ public class health : MonoBehaviour
         }
         for (int i = 0; i < hearts.Length; i++)
         {
-            if ( i - 1   >= HealthP)
+            if ( i-1 >= HealthP)
             {
                 hearts[i].SetBool("HeartOn",true);
             }
@@ -37,10 +37,10 @@ public class health : MonoBehaviour
           //      hearts[i].enabled = false; 
            // }
         }
-        if( HealthP <= 0)
-        {
-            hearts[0].SetBool("HeartOn", false);
-        }
+       // if( HealthP <= 0)
+      //  {
+      //   hearts[0].SetBool("HeartOn", false);
+       // }
       
     }
     private void OnCollisionEnter2D(Collision2D collision)
