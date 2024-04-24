@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 public class PlayerControllerAndAnimator : MonoBehaviour
 {
     private Rigidbody2D rb;
     public float speed;
     public float jumpForce;
+    private bool moveInput;
 
     private bool isGrounded;
     public Transform feetPos;
@@ -17,6 +19,7 @@ public class PlayerControllerAndAnimator : MonoBehaviour
     public float jumpTime;
     private bool isJumping;
     private bool doubleJump;
+    private bool isfacingRight = true;
 
     private Animator anim;
     
@@ -28,6 +31,7 @@ public class PlayerControllerAndAnimator : MonoBehaviour
 
     private void Update()
     {
+        
         isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
 
         if(isGrounded == true && Input.GetKeyDown(KeyCode.W))
@@ -85,17 +89,28 @@ public class PlayerControllerAndAnimator : MonoBehaviour
         }
         else
         {
-            anim.SetBool("isRunning", false);
+            anim.SetBool("isRunning", true);
         }
 
-        if (moveInput < 0)
+        if (isfacingRight == true && moveInput < 0)
         {
-            transform.eulerAngles = new Vector3(0, 180, 0);
+            Flip();
+            transform.eulerAngles = new Vector2(0, 180);
         }
-        else if (moveInput > 0)
+        else if (isfacingRight == false && moveInput > 0)
         {
-            transform.eulerAngles = new Vector3(0, 0, 0);
+            Flip();
+            transform.eulerAngles = new Vector2(0, 0);
         }
+
         
+    }
+
+    void Flip()
+    {
+        isfacingRight = !isfacingRight;
+        Vector2 Scaler = transform.localScale;
+        Scaler.x *= -1;
+        transform.localScale = Scaler;
     }
 }
