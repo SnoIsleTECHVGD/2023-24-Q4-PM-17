@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 3319227555213111954}
   - component: {fileID: 689618211871635318}
   - component: {fileID: 5486603640324213027}
+  - component: {fileID: 955784625878889461}
   m_Layer: 0
   m_Name: player
   m_TagString: player
@@ -68,7 +69,7 @@ Transform:
   m_Children:
   - {fileID: 4422978178661952371}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5646572839108543232
 SpriteRenderer:
@@ -111,8 +112,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.2690562, g: 1, b: 0.08962262, a: 1}
+  m_Sprite: {fileID: 7482667652216324306, guid: cbedb9e7a2c4a6444b438e9868e9fee5, type: 3}
+  m_Color: {r: 0.13919187, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -328,6 +329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebd76bbea0c44a748b2a5e5bbc6dec7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 5646572839108543235}
   HealthP: 3
   NumOfHearts: 3
   hearts:
@@ -337,5 +339,23 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  fullHeart: {fileID: 2118370680, guid: e0a4e875c91471a4ba1ae1dd8b59a2b2, type: 3}
-  emptyheart: {fileID: -1725219058, guid: e0a4e875c91471a4ba1ae1dd8b59a2b2, type: 3}
+--- !u!95 &955784625878889461
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5646572839108543235}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 767cabb11d3ac9f4d9e88cd2326b0b82, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

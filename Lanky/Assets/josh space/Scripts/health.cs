@@ -28,7 +28,7 @@ public class health : MonoBehaviour
         }
         for (int i = 0; i < hearts.Length; i++)
         {
-            if (i - 1 >= HealthP)
+            if (i  >= HealthP)
             {
                 hearts[i].SetBool("HeartOn", true);
             }
@@ -36,12 +36,7 @@ public class health : MonoBehaviour
             {
                 hearts[i].SetBool("HeartOn", false);
             }
-            // the player will need to die when the helath gets to 0
-          
-
-
-
-
+       
         }
 
     }
@@ -54,13 +49,16 @@ public class health : MonoBehaviour
 
             }
 
-            if (collision.gameObject.tag == "healthing")
-            {
-                HealthP += NumOfHearts;
-                Debug.Log("you have healed");
-
-            }
         }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "healthing")
+        {
+            HealthP += NumOfHearts;
+            Debug.Log("you have healed");
+
+        }
     }
+}
 

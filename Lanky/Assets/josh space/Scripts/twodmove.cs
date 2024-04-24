@@ -8,17 +8,17 @@ public class twodmove : MonoBehaviour
     public float speed = 8f;
     public float jumpPower = 16f;
     private bool isfacingRight = true;
+ 
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] public KeyCode jump ,jump1, slam;
-    // Start is called before the first frame update
-    void Start()
+    private Animator anima;
+    private void Awake()
     {
-        
+        anima = GetComponent<Animator>();
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -34,15 +34,17 @@ public class twodmove : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, jumpPower);
         }
 
+        if (horizontal == 0)
+        {
+            anima.SetBool("isrun", false);
+        }
 
         Flip();
 
         if (Input.GetKey(slam))
         {
-           
                 rb.gravityScale = rb.gravityScale + .09f;
-           
-            
+        
         }
         if (IsGrounded())
         {
