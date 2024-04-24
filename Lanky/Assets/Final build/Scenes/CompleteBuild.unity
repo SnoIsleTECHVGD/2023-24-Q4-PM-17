@@ -738,6 +738,10 @@ PrefabInstance:
       propertyPath: hearts.Array.data[5]
       value: 
       objectReference: {fileID: 1708549962}
+    - target: {fileID: 5646572839108543232, guid: da455d92c517bb543bfa592b620c0747, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5646572839108543233, guid: da455d92c517bb543bfa592b620c0747, type: 3}
       propertyPath: m_GravityScale
       value: 1
@@ -891,6 +895,7 @@ GameObject:
   - component: {fileID: 817075181}
   - component: {fileID: 817075180}
   - component: {fileID: 817075182}
+  - component: {fileID: 817075183}
   m_Layer: 0
   m_Name: tunacan
   m_TagString: healthing
@@ -975,12 +980,25 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &817075183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 817075179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c09c172a48f0f534686a3565cf6e341e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 817075179}
 --- !u!1 &831521386
 GameObject:
   m_ObjectHideFlags: 0
@@ -1420,9 +1438,9 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1057930039}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 04f10681afb4c224c8e7863c977f6d7b, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7b6134310cb4f394ea256e42686fd8b1, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
