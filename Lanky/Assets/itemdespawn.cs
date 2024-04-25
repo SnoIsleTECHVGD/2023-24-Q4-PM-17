@@ -12,14 +12,14 @@ public class itemdespawn : MonoBehaviour
     }
 
     // Update is called once per frame
-    private void OnTriggerEnter2D(Collision2D collision2D)
+    private void OnTriggerEnter2D(Collider2D trigger2D)
     {
-
-        if (collision2D.gameObject.tag == "player")
+        if (trigger2D.gameObject.tag == "player")
         {
-            Destroy(item);
+           
+            Debug.Log("you have healed");
+            Destroy(gameObject);
 
         }
-
     }
 }

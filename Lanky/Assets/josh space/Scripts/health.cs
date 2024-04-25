@@ -50,15 +50,8 @@ public class health : MonoBehaviour
             }
 
         }
+    
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "healthing")
-        {
-            HealthP += NumOfHearts;
-            Debug.Log("you have healed");
-
-        }
-    }
+   
 }
 
