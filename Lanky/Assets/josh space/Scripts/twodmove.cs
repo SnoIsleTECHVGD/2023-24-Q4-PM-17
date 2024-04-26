@@ -34,10 +34,7 @@ public class twodmove : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, jumpPower);
         }
 
-        if (horizontal == 0)
-        {
-            anima.SetBool("isrun", false);
-        }
+       
 
         Flip();
 
