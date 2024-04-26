@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -50,8 +51,10 @@ public class health : MonoBehaviour
             }
 
         }
-    
 
-   
+    internal static void Damage(int damage)
+    {
+        throw new NotImplementedException();
+    }
 }
 
