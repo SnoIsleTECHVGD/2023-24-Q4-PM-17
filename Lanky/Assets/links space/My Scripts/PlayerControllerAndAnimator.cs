@@ -21,12 +21,19 @@ public class PlayerControllerAndAnimator : MonoBehaviour
     private bool doubleJump;
     private bool isfacingRight = true;
 
+    private bool isAttacking = false;
+    private GameObject attackArea = default;
+    private float timeToAttack = 0.25f;
+    private float timer = 0f;
+
+
     private Animator anim;
     
     private void Start()
     {
         anim = GetComponent<Animator>();
         rb = GetComponentInParent<Rigidbody2D>();
+        attackArea = transform.GetChild(0).gameObject;
     }
 
     private void Update()
@@ -103,7 +110,27 @@ public class PlayerControllerAndAnimator : MonoBehaviour
             transform.eulerAngles = new Vector2(0, 0);
         }
 
-        
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            Attack();
+            anim.SetBool("isAttacking", true);
+        }
+        else
+        {
+            anim.SetBool("isAttacking", false);
+        }
+
+        if (isAttacking)
+        {
+            timer += Time.deltaTime;
+
+            if(timer >= timeToAttack)
+            {
+                timer = 0;
+                isAttacking = false;
+                attackArea.SetActive(isAttacking);
+            }
+        }
     }
 
     void Flip()
@@ -112,5 +139,11 @@ public class PlayerControllerAndAnimator : MonoBehaviour
         Vector2 Scaler = transform.localScale;
         Scaler.x *= -1;
         transform.localScale = Scaler;
+    }
+
+    private void Attack()
+    {
+        isAttacking = true;
+        attackArea.SetActive(isAttacking);
     }
 }
