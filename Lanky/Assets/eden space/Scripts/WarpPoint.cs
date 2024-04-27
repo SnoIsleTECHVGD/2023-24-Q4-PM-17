@@ -1,19 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class WarpPoint : MonoBehaviour
 {
-    public static Vector2 Warp = new Vector2(39.22f, -8.72f);
+    public static bool ignorewarp = false;
+    public Vector2 Warp = new Vector2(-18.25f, 3.71f);
 
     public GameObject player;
     public string RoomName;
+    public bool ignoreQwarp;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Warp = player.transform.position;
-        SceneManager.LoadScene(RoomName);
-
+        player.transform.position = Warp;
+        ignorewarp = ignoreQwarp;
+        //SceneManager.LoadScene(RoomName);
     }
     void Start()
     {

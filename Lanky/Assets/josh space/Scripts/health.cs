@@ -7,48 +7,60 @@ public class health : MonoBehaviour
 {
 
     private Rigidbody2D rb;
-
-    public int HealthP ;
+    public GameObject player;
+    public int HealthP;
     public int NumOfHearts;
-    public Image[] hearts;
-    public Sprite fullHeart;
-    public Sprite emptyheart;
+    public Animator[] hearts;
 
     void Update()
     {
+        if (HealthP <= 0)
+        {
+            Destroy(player);
 
-        if(HealthP > NumOfHearts)
+
+
+        }
+
+        if (HealthP > NumOfHearts)
         {
             HealthP = NumOfHearts;
         }
         for (int i = 0; i < hearts.Length; i++)
         {
-            if (i < HealthP)
+            if (i  >= HealthP)
             {
-                hearts[i].sprite = fullHeart;
+                hearts[i].SetBool("HeartOn", true);
             }
             else
             {
-                hearts[i].sprite = emptyheart;
+                hearts[i].SetBool("HeartOn", false);
             }
-            if(i< NumOfHearts)
-            {
-                hearts[i].enabled = true;
-            } else
-            {
-                hearts[i].enabled = false; 
-            }
+       
         }
-      
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
 
-        if (collision.gameObject.tag == "dmgthing")
+    }
+        private void OnCollisionEnter2D(Collision2D collision)
         {
-            HealthP -= 1;
+
+            if (collision.gameObject.tag == "dmgthing")
+            {
+                HealthP -= 1;
+
+            }
+
+        }
+    private void OnTriggerEnter2D(Collider2D trigger2D)
+    {
+        if (trigger2D.gameObject.tag == "healthing")
+        {
+
+            Debug.Log("you have healed");
+            HealthP = NumOfHearts;
 
         }
     }
+
 
 }
+
