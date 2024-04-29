@@ -1167,9 +1167,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 7646764196491961640}
-  - {fileID: 753744533778291798}
-  - {fileID: 2579044155138189081}
   - {fileID: 500873133284586710}
   - {fileID: 500873134155221660}
   - {fileID: 500873135204072996}
@@ -2890,6 +2887,8 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+<<<<<<< HEAD
+=======
 --- !u!1 &688102276354178072
 GameObject:
   m_ObjectHideFlags: 0
@@ -8136,3 +8135,4 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -0.000015258789}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+>>>>>>> 975c2caa6b62cbb80ba91bc1fb7cf396f1853a8b
