@@ -9,6 +9,10 @@ TagManager:
   - dmgthing
   - portal
   - portaltwo
+  - pin1
+  - pin3
+  - pin2
+  - healthing
   layers:
   - Default
   - TransparentFX
@@ -18,7 +22,7 @@ TagManager:
   - UI
   - A
   - Ground
-  - 
+  - Fluids
   - 
   - 
   - 
