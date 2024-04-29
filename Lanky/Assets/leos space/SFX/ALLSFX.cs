@@ -16,5 +16,9 @@ public class ALLSFX : MonoBehaviour
     {
         AudioManager.Instance.PlaySFX("Page_flip");
     }
+    public void PageSlide()
+    {
+        AudioManager.Instance.PlaySFX("Page_Slide");
+    }
 
 }
