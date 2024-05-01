@@ -8,7 +8,7 @@ public class AttackAreap : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.GetComponent<Health>() != null)
+        if (collider.GetComponent<Health31>() != null)
         {
             Debug.Log("you have hit");
             health.Damage(10);
