@@ -6,12 +6,13 @@ public class AttackAreap : MonoBehaviour
 {
     private int damage = 3;
 
-    private void OnTriggerEnter2D(Collider2D trigger2D)
+    private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (trigger2D.gameObject.tag == "enemy" && Input.GetKeyDown(KeyCode.Mouse0))
+        if (collider.GetComponent<Health>() != null)
         {
             Debug.Log("you have hit");
-        } 
-        
+            health.Damage(10);
+        }
+
     }
 }
