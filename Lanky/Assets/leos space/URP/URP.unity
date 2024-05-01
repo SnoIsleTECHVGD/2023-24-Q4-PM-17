@@ -361,6 +361,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1266163514
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1266163515}
+  m_Layer: 0
+  m_Name: GameObject (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1266163515
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1266163514}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.6684017, y: -1.6254544, z: 2.1071532}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1373647554
 GameObject:
   m_ObjectHideFlags: 0
@@ -3317,6 +3348,18 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 16.66
       objectReference: {fileID: 0}
+    - target: {fileID: 6610439320852497663, guid: 3232fd20fc6d0884eb2509c1a9c1ecbb, type: 3}
+      propertyPath: Music.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610439320852497663, guid: 3232fd20fc6d0884eb2509c1a9c1ecbb, type: 3}
+      propertyPath: Music.Array.data[0].name
+      value: MAGIC
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610439320852497663, guid: 3232fd20fc6d0884eb2509c1a9c1ecbb, type: 3}
+      propertyPath: Music.Array.data[0].soundClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 104a9bcf6c4ec0d49a46e239e2433e8b, type: 3}
     - target: {fileID: 6939688882097450174, guid: 3232fd20fc6d0884eb2509c1a9c1ecbb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10.32
