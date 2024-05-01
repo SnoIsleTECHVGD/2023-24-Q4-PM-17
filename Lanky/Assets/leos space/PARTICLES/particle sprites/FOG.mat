@@ -42,7 +42,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _LSpace: 0
-    - _fogSize: 2
+    - _fogSize: 1
     - _wSpace: 1
     m_Colors:
     - _fogColor: {r: 1, g: 1, b: 1, a: 0.48235294}
