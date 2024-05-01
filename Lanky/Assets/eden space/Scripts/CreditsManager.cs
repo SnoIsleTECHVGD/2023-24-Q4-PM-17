@@ -43,6 +43,6 @@ public class CreditsManager : MonoBehaviour
     }
     public void LoadTitle()
     {
-        SceneManager.LoadScene("Title");
+        SceneManager.LoadScene("MainTitle");
     }
 }

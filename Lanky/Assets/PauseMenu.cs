@@ -21,6 +21,10 @@ public class PauseMenu : MonoBehaviour
             else
             {
                 Pause();
+               
+                
+                    AudioManager.Instance.PlaySFX("Page_Slide");
+                
             }
         }
         

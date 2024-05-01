@@ -7,7 +7,7 @@ public class Buttons : MonoBehaviour
 {
     public void Play()
     {
-        SceneManager.LoadScene("LevelOneTest");
+        SceneManager.LoadScene("MainLevel");
     }
 
     public void Quit()

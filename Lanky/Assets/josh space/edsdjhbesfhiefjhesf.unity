@@ -1804,35 +1804,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5486603640324213027, guid: da455d92c517bb543bfa592b620c0747, type: 3}
 
-      propertyPath: hearts.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5486603640324213027, guid: da455d92c517bb543bfa592b620c0747, type: 3}
->>>>>>> a9ce86e36ac95c1902da82535af19043ed2c41a1
-      propertyPath: hearts.Array.data[0]
-      value: 
-      objectReference: {fileID: 1272219969}
-    - target: {fileID: 5486603640324213027, guid: da455d92c517bb543bfa592b620c0747, type: 3}
-      propertyPath: hearts.Array.data[1]
-      value: 
-      objectReference: {fileID: 1508447500}
-    - target: {fileID: 5486603640324213027, guid: da455d92c517bb543bfa592b620c0747, type: 3}
-      propertyPath: hearts.Array.data[2]
-      value: 
-      objectReference: {fileID: 379751620}
-    - target: {fileID: 5486603640324213027, guid: da455d92c517bb543bfa592b620c0747, type: 3}
-      propertyPath: hearts.Array.data[3]
-      value: 
-      objectReference: {fileID: 254204449}
-    - target: {fileID: 5486603640324213027, guid: da455d92c517bb543bfa592b620c0747, type: 3}
-      propertyPath: hearts.Array.data[4]
-      value: 
-      objectReference: {fileID: 1668167717}
-    - target: {fileID: 5486603640324213027, guid: da455d92c517bb543bfa592b620c0747, type: 3}
-      propertyPath: hearts.Array.data[5]
-      value: 
-      objectReference: {fileID: 263722900}
-
     - target: {fileID: 5486603640324213027, guid: da455d92c517bb543bfa592b620c0747, type: 3}
       propertyPath: hearts.Array.data[6]
       value: 
