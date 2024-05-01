@@ -4,33 +4,5 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-<<<<<<< HEAD
-  m_Scenes:
-  - enabled: 1
-    path: Assets/Final build/Scenes/MainTitle.unity
-    guid: e2c07b8b7c3f3014c83e516292b8a001
-  - enabled: 1
-    path: Assets/Final build/Scenes/MainLevel.unity
-    guid: 0de6d5f89bce23649b2101873a7eae28
-  - enabled: 1
-    path: Assets/Final build/Scenes/MainDeath.unity
-    guid: 396f5d3ec7a8fff4c82c7ab4b24ed26d
-  - enabled: 1
-    path: Assets/eden space/Scenes/Credits/Credits.unity
-    guid: 50118426ad1a1f949b270a3c70383e4a
-  - enabled: 1
-    path: Assets/eden space/Scenes/Credits/Credits2.unity
-    guid: 4922ec96406644243ab72348c3d70b1e
-  - enabled: 1
-    path: Assets/eden space/Scenes/Credits/Credits3.unity
-    guid: 845b1e5d1a55b81409f9d6660b2b850f
-  - enabled: 1
-    path: Assets/eden space/Scenes/Credits/Credits4.unity
-    guid: 2e82970316d4f5c45b6bbaa0d143a842
-  - enabled: 1
-    path: Assets/eden space/Scenes/Credits/Credits5.unity
-    guid: 8bfc21d95f07a594b8b74f8298a5e38f
-=======
   m_Scenes: []
->>>>>>> c87d34835a68c10208988053c69e9a4b58d35d33
   m_configObjects: {}
