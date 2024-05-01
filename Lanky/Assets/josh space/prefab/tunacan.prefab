@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 8323749850458919777}
   - component: {fileID: 8323749850458919776}
   - component: {fileID: 8323749850458919807}
-  - component: {fileID: 8323749850458919804}
   - component: {fileID: 8323749850458919805}
   m_Layer: 0
   m_Name: tunacan
@@ -133,21 +132,6 @@ MonoBehaviour:
   rotateSpeed: 60
   wobbleAng: 10
   startWobble: 0
---- !u!114 &8323749850458919804
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8323749850458919780}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ca0eff5c525cb441a32dcc3c7a208bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PointA: {fileID: 0}
-  pointb: {fileID: 0}
-  speed: 1
 --- !u!50 &8323749850458919805
 Rigidbody2D:
   serializedVersion: 4
