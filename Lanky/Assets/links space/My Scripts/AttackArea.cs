@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackAreap : MonoBehaviour
+public class AttackArea : MonoBehaviour
 {
     private int damage = 3;
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.GetComponent<Health31>() != null)
+        Health31 health = collider.GetComponent<Health31>();
+        if (health != null)
         {
             Debug.Log("you have hit");
             health.Damage(10);
