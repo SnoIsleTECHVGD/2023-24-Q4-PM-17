@@ -51,13 +51,13 @@ public class health : MonoBehaviour
             }
 
         }
-<<<<<<< HEAD
+
 
     internal static void Damage(int damage)
     {
         throw new NotImplementedException();
     }
-=======
+
     private void OnTriggerEnter2D(Collider2D trigger2D)
     {
         if (trigger2D.gameObject.tag == "healthing")
@@ -70,6 +70,6 @@ public class health : MonoBehaviour
     }
 
 
->>>>>>> 975c2caa6b62cbb80ba91bc1fb7cf396f1853a8b
+
 }
 

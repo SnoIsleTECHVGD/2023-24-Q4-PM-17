@@ -25,7 +25,7 @@ public class AudioManager : MonoBehaviour
 
     public void Start()
     {
-       //plays music once the game starts, no music currently.
+        AudioManager.Instance.MusicPLayer("MAGIC");
     }
 
 

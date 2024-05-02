@@ -13,7 +13,7 @@ public class enemyshooting : MonoBehaviour
     public GameObject player;
     public GameObject bulletPrefab;
     public float bulletForce = 20f;
-    
+    public Animator animator;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,13 +34,19 @@ public class enemyshooting : MonoBehaviour
             if (timer > 3)
             {
                 timer = 0;
+                animator.SetBool("shooting", true);
                 shoot();
             }
+        }
+        else
+        {
+            animator.SetBool("shooting", false);
         }
 
     }
     void shoot()
     {
+        
         GameObject bullet = Instantiate(bulletPrefab, FirePoint.position, FirePoint.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(FirePoint.up * bulletForce, ForceMode2D.Force);

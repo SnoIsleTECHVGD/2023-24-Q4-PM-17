@@ -47,6 +47,24 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: TheBackest
+    uniqueID: 3835035627
+    locked: 0
+  - name: border
+    uniqueID: 3253272691
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: backestGRound
+    uniqueID: 2169977999
+    locked: 0
+  - name: background
+    uniqueID: 2729128749
+    locked: 0
+  - name: foreground
+    uniqueID: 3121448189
+    locked: 0
+  - name: foreforeground
+    uniqueID: 1152298229
     locked: 0

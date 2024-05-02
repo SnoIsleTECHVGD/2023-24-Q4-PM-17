@@ -42,11 +42,11 @@ Material:
     m_Ints: []
     m_Floats:
     - _LSpace: 0
-    - _fogSize: 2
+    - _fogSize: 0.2
     - _wSpace: 1
     m_Colors:
-    - _fogColor: {r: 0.9900834, g: 1, b: 0.79716986, a: 0.48235294}
-    - _fogScrollSpeed: {r: 0.3, g: 0, b: 0, a: 0}
+    - _fogColor: {r: 1, g: 1, b: 1, a: 0.48235294}
+    - _fogScrollSpeed: {r: 3.76, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &1934413678555048287
 MonoBehaviour:
