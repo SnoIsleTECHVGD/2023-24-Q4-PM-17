@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class health : MonoBehaviour
 {
@@ -19,7 +20,7 @@ public class health : MonoBehaviour
         {
             Destroy(player);
 
-
+            SceneManager.LoadScene("MainDeath");
 
         }
 
