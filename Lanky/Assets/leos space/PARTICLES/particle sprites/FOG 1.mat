@@ -45,7 +45,7 @@ Material:
     - _fogSize: 3
     - _wSpace: 1
     m_Colors:
-    - _fogColor: {r: 0.9900834, g: 1, b: 0.79716986, a: 0.56078434}
+    - _fogColor: {r: 0.79607844, g: 0.8970924, b: 1, a: 0.56078434}
     - _fogScrollSpeed: {r: 7.24, g: 14.55, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &1934413678555048287

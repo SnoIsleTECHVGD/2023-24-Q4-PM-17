@@ -6013,7 +6013,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5646572839108543232, guid: da455d92c517bb543bfa592b620c0747, type: 3}
       propertyPath: m_SortingOrder
-      value: 18
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 5646572839108543233, guid: da455d92c517bb543bfa592b620c0747, type: 3}
       propertyPath: m_GravityScale
@@ -6025,7 +6025,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5646572839108543235, guid: da455d92c517bb543bfa592b620c0747, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5646572839108543239, guid: da455d92c517bb543bfa592b620c0747, type: 3}
       propertyPath: m_RootOrder
@@ -6045,11 +6045,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5646572839108543239, guid: da455d92c517bb543bfa592b620c0747, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.1
+      value: -1.68
       objectReference: {fileID: 0}
     - target: {fileID: 5646572839108543239, guid: da455d92c517bb543bfa592b620c0747, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -10.46
+      value: -10.27
       objectReference: {fileID: 0}
     - target: {fileID: 5646572839108543239, guid: da455d92c517bb543bfa592b620c0747, type: 3}
       propertyPath: m_LocalPosition.z
@@ -13363,6 +13363,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 25.14
       objectReference: {fileID: 0}
+    - target: {fileID: 1829861565888783656, guid: 3232fd20fc6d0884eb2509c1a9c1ecbb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 1829861565888783656, guid: 3232fd20fc6d0884eb2509c1a9c1ecbb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 8.88
+      objectReference: {fileID: 0}
     - target: {fileID: 1829861566059130249, guid: 3232fd20fc6d0884eb2509c1a9c1ecbb, type: 3}
       propertyPath: cam
       value: 
@@ -16136,7 +16144,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1845846596}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
