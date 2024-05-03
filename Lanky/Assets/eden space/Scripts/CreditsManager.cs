@@ -12,7 +12,7 @@ public class CreditsManager : MonoBehaviour
     }
     public void Credits2Back()
     {
-        SceneManager.LoadScene("Credits1");
+        SceneManager.LoadScene("Credits");
     }
 
     public void Credits2()
