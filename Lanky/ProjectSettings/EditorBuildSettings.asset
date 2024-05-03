@@ -6,6 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+<<<<<<< HEAD
     path: Assets/Final build/Scenes/MainTitle.unity
     guid: e2c07b8b7c3f3014c83e516292b8a001
   - enabled: 1
@@ -29,4 +30,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/eden space/Scenes/Credits/Credits5.unity
     guid: 8bfc21d95f07a594b8b74f8298a5e38f
+=======
+    path: Assets/josh space/oldfinsl.unity
+    guid: 2c0a1aa5ae9786a47b67799c188fa927
+  - enabled: 1
+    path: Assets/Final build/Scenes/MainDeath.unity
+    guid: 396f5d3ec7a8fff4c82c7ab4b24ed26d
+>>>>>>> 5810fc6145d5301217066ec6112a6dbc7fac042d
   m_configObjects: {}

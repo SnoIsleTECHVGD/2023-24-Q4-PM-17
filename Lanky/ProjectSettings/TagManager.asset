@@ -13,6 +13,7 @@ TagManager:
   - pin3
   - pin2
   - healthing
+  - Crate
   layers:
   - Default
   - TransparentFX
@@ -23,7 +24,7 @@ TagManager:
   - A
   - Ground
   - Fluids
-  - 
+  - Second BG
   - 
   - 
   - 

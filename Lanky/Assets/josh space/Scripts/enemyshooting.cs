@@ -29,19 +29,24 @@ public class enemyshooting : MonoBehaviour
 
         if (distance < distanceBetween)
         {
+            animator.SetBool("shooting", true);
             timer += Time.deltaTime;
-
+            
             if (timer > 3)
             {
                 timer = 0;
-                animator.SetBool("shooting", true);
+               
                 shoot();
+                
             }
+          
         }
         else
         {
             animator.SetBool("shooting", false);
         }
+
+
 
     }
     void shoot()
