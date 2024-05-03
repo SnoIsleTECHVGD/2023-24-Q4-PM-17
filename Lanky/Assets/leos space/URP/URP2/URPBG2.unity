@@ -360,6 +360,10 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 1297904925}
+    - target: {fileID: 7106863337637087275, guid: 3d47c3d70270fd2479eb7db7998c7680, type: 3}
+      propertyPath: m_IsGlobal
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7106863337862618169, guid: 3d47c3d70270fd2479eb7db7998c7680, type: 3}
       propertyPath: cam
       value: 
