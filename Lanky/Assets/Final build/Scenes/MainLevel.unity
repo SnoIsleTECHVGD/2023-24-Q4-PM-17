@@ -2709,7 +2709,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -4.0340414, y: -0.33014393}
+  m_Offset: {x: -4.0340414, y: -0.5069499}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2720,7 +2720,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.6280766, y: 2.041954}
+  m_Size: {x: 1.6280766, y: 2.3955684}
   m_EdgeRadius: 0
 --- !u!50 &240285092
 Rigidbody2D:
@@ -4145,8 +4145,8 @@ MonoBehaviour:
   - {fileID: 1519537795}
   - {fileID: 680216967}
   m_Bounds:
-    m_Center: {x: 0.05226904, y: -0.07903898, z: 0}
-    m_Extent: {x: 0.44582373, y: 0.40399337, z: 0}
+    m_Center: {x: 0.05226904, y: -0.07903707, z: 0}
+    m_Extent: {x: 0.44582373, y: 0.4039933, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -13436,11 +13436,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5506135061927485073, guid: 08999ac9ad8462c47bf4b3a4812c8b3b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -2.4130096
+      value: -2.4130554
       objectReference: {fileID: 0}
     - target: {fileID: 5506135062027602097, guid: 08999ac9ad8462c47bf4b3a4812c8b3b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.99998474
+      value: -1.0000305
       objectReference: {fileID: 0}
     - target: {fileID: 5506135063104256804, guid: 08999ac9ad8462c47bf4b3a4812c8b3b, type: 3}
       propertyPath: m_Pivot.x
@@ -13532,11 +13532,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5506135063105919733, guid: 08999ac9ad8462c47bf4b3a4812c8b3b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -2.4130096
+      value: -2.4130554
+      objectReference: {fileID: 0}
+    - target: {fileID: 5506135063187499520, guid: 08999ac9ad8462c47bf4b3a4812c8b3b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 9.546204
+      objectReference: {fileID: 0}
+    - target: {fileID: 5506135063187499520, guid: 08999ac9ad8462c47bf4b3a4812c8b3b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 4.7730713
       objectReference: {fileID: 0}
     - target: {fileID: 5506135063554416020, guid: 08999ac9ad8462c47bf4b3a4812c8b3b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -3.2700653
+      value: -3.270111
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -20131,8 +20139,8 @@ MonoBehaviour:
   - {fileID: 1350078921}
   - {fileID: 1293554349}
   m_Bounds:
-    m_Center: {x: -0.0020766854, y: 0.09822336, z: 0}
-    m_Extent: {x: 0.15057585, y: 0.22964355, z: 0}
+    m_Center: {x: -0.0020785779, y: 0.09821956, z: 0}
+    m_Extent: {x: 0.15057585, y: 0.22964357, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
