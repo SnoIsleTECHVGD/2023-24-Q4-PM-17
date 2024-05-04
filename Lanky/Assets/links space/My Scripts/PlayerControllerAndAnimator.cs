@@ -146,4 +146,12 @@ public class PlayerControllerAndAnimator : MonoBehaviour
         isAttacking = true;
         attackArea.SetActive(isAttacking);
     }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Ground"))
+        {
+            isJumping = false;
+        }
+    }
 }
