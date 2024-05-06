@@ -14,6 +14,7 @@ TagManager:
   - pin2
   - healthing
   - Crate
+  - Ground
   layers:
   - Default
   - TransparentFX
@@ -26,7 +27,7 @@ TagManager:
   - Fluids
   - Second BG
   - FirstBG
-  - 
+  - ThirdBg
   - 
   - 
   - 
@@ -48,6 +49,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Furthest
+    uniqueID: 2257684683
+    locked: 0
   - name: TheBackest
     uniqueID: 3835035627
     locked: 0
@@ -68,4 +72,7 @@ TagManager:
     locked: 0
   - name: foreforeground
     uniqueID: 1152298229
+    locked: 0
+  - name: player
+    uniqueID: 1670355905
     locked: 0

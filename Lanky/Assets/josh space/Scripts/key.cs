@@ -6,6 +6,7 @@ public class key : MonoBehaviour
 {
     public GameObject door;
     public GameObject breakpart;
+    public GameObject Key;
     // Update is called once per frame
     private void OnTriggerEnter2D(Collider2D trigger2D)
     {
@@ -16,6 +17,7 @@ public class key : MonoBehaviour
             Destroy(breakpart);
 
 
+            Destroy(Key);
         }
 
        

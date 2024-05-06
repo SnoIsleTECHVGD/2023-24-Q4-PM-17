@@ -8,6 +8,8 @@ public class camerabounds : MonoBehaviour
     public float smoothSpeed = 2f;
     public Vector3 offset;
     public Vector3 minVal, maxval;
+    private bool inPortal;
+    public GameObject GameObject;
     
 
     
@@ -20,6 +22,9 @@ public class camerabounds : MonoBehaviour
     void FixedUpdate()
     {
         Bounds();
+        
+
+        
     }
 
     void Bounds()
@@ -33,4 +38,9 @@ public class camerabounds : MonoBehaviour
         transform.position = smoothPos;
 
     }
+
+   
+
+
+
 }

@@ -8,12 +8,9 @@ public class WarpPoint : MonoBehaviour
     public Vector2 Warp = new Vector2(-18.25f, 3.71f);
 
     public GameObject player;
-    public string RoomName;
-    public bool ignoreQwarp;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         player.transform.position = Warp;
-        ignorewarp = ignoreQwarp;
         //SceneManager.LoadScene(RoomName);
     }
     void Start()

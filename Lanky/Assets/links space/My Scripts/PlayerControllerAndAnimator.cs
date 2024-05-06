@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.Searcher.SearcherWindow.Alignment;
+//using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 public class PlayerControllerAndAnimator : MonoBehaviour
 {
@@ -145,5 +145,13 @@ public class PlayerControllerAndAnimator : MonoBehaviour
     {
         isAttacking = true;
         attackArea.SetActive(isAttacking);
+    }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Ground"))
+        {
+            isJumping = false;
+        }
     }
 }
