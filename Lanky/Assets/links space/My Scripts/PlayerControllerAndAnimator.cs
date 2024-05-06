@@ -16,7 +16,7 @@ public class PlayerControllerAndAnimator : MonoBehaviour
     public LayerMask whatIsGround;
 
     private float jumpTimeCounter;
-    public float jumpTime;
+    public float jumpTime = 0.1f;
     private bool isJumping;
     private bool doubleJump;
     private bool isfacingRight = true;
@@ -45,7 +45,7 @@ public class PlayerControllerAndAnimator : MonoBehaviour
         {
             anim.SetTrigger("takeOff");
             isJumping = true;
-            jumpTimeCounter = jumpTime;
+            jumpTimeCounter = 0.1f;
             rb.velocity = Vector2.up * jumpForce;
         }
 
@@ -76,15 +76,6 @@ public class PlayerControllerAndAnimator : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.W))
         {
             isJumping = false;
-        }
-
-        if (isGrounded == false && doubleJump == false && Input.GetKeyDown(KeyCode.W))
-        {
-            isJumping = true;
-            doubleJump = true;
-            isJumping = true;
-            jumpTimeCounter = jumpTime;
-            rb.velocity = Vector2.up * jumpForce;
         }
 
         float moveInput = Input.GetAxisRaw("Horizontal");
