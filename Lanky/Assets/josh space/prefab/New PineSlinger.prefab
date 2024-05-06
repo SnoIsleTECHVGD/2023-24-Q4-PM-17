@@ -23,14 +23,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3207346459716227069}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.193, y: 0.188, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0.307, y: 0.188, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6789300482154564516}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1 &6789300481410629459
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,9 +299,13 @@ GameObject:
   - component: {fileID: 6789300482154564518}
   - component: {fileID: 6789300482154564519}
   - component: {fileID: 7928003774997473568}
+  - component: {fileID: 5533711793803920669}
+  - component: {fileID: 6739459010968023326}
+  - component: {fileID: 3854934501006490649}
+  - component: {fileID: 7189620106603734322}
   m_Layer: 0
   m_Name: New PineSlinger
-  m_TagString: Untagged
+  m_TagString: dmgthing
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -322,7 +326,7 @@ Transform:
   - {fileID: 6789300481919034347}
   - {fileID: 7192794281589154361}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6789300482154564517
 SpriteRenderer:
@@ -364,7 +368,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 150
   m_Sprite: {fileID: 21300000, guid: 42c63d26878e0ae4688c120ad5f1f1b6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -450,11 +454,74 @@ MonoBehaviour:
   bullet: {fileID: 402241470008168137, guid: 8ae8d313bbbb75942aa495f0192ce210, type: 3}
   bulletpos: {fileID: 7192794281589154361}
   distance: 12
-  distanceBetween: 8
+  distanceBetween: 12
   player: {fileID: 5646572839108543235, guid: da455d92c517bb543bfa592b620c0747, type: 3}
   bulletPrefab: {fileID: 402241470008168137, guid: 8ae8d313bbbb75942aa495f0192ce210, type: 3}
-  bulletForce: 200
+  bulletForce: 5
   animator: {fileID: 6789300482154564519}
+--- !u!114 &5533711793803920669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6789300482154564512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df15f99f84ae06d49b47c2bd8b4e6c3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 20
+--- !u!70 &6739459010968023326
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6789300482154564512}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.00137043, y: 0.016610533}
+  m_Size: {x: 0.2578869, y: 0.6346428}
+  m_Direction: 0
+--- !u!50 &3854934501006490649
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6789300482154564512}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!114 &7189620106603734322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6789300482154564512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df15f99f84ae06d49b47c2bd8b4e6c3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 20
 --- !u!1 &6789300482277718492
 GameObject:
   m_ObjectHideFlags: 0

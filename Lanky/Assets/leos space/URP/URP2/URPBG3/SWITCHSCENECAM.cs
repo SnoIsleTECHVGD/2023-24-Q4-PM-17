@@ -13,10 +13,28 @@ public class SWITCHSCENECAM : MonoBehaviour
     {
         inPortal = true;
 
-        if ( inPortal == true )
+        if ( inPortal == true && CompareTag("portal1"))
         {
             worldCams[0].SetActive(false);
             worldCams[1].SetActive(true);
         }
+        if( inPortal == true && CompareTag("portal2"))
+        {
+            worldCams[0].SetActive(true);
+            worldCams[1].SetActive(false);
+        }
+        if (inPortal == true && CompareTag("portal3"))
+        {
+            worldCams[0].SetActive(false);
+            worldCams[2].SetActive(true);
+        }
+        if (inPortal == true && CompareTag("portal4"))
+        {
+            worldCams[0].SetActive(false);
+            worldCams[2].SetActive(true);
+        }
+
+
     }
+   
 }
