@@ -78,6 +78,33 @@ public class PlayerControllerAndAnimator : MonoBehaviour
             isJumping = false;
         }
 
+        if (isGrounded == false && doubleJump == false && Input.GetKeyDown(KeyCode.W))
+        {
+            isJumping = true;
+            doubleJump = true;
+            jumpTimeCounter = jumpTime;
+            rb.velocity = Vector2.up * jumpForce;
+        }
+
+        if (Input.GetKey(KeyCode.W) && doubleJump == true)
+        {
+            if (jumpTimeCounter > 0)
+            {
+                rb.velocity = Vector2.up * jumpForce;
+                jumpTimeCounter -= Time.deltaTime;
+            }
+            else
+            {
+                doubleJump = false;
+            }
+
+        }
+
+        if(Vector2.up * jumpForce > 0.5f)
+        {
+            doubleJump = false;
+        }
+
         float moveInput = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
 
@@ -145,4 +172,6 @@ public class PlayerControllerAndAnimator : MonoBehaviour
             isJumping = false;
         }
     }
+
+
 }
