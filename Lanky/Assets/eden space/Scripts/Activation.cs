@@ -5,6 +5,7 @@ using UnityEngine;
 public class Activation : MonoBehaviour
 {
     public PLatform platform;
+    public waitatposition wait;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Crate"))
