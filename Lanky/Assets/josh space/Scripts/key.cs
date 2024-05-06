@@ -17,7 +17,6 @@ public class key : MonoBehaviour
            
             Destroy(breakpart);
 
-            SceneManager.LoadScene("MainWin");
             Destroy(Key);
         }
 
