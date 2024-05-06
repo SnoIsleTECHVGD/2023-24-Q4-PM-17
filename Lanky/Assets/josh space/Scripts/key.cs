@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class key : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class key : MonoBehaviour
            
             Destroy(breakpart);
 
-
+            SceneManager.LoadScene("MainWin");
             Destroy(Key);
         }
 
