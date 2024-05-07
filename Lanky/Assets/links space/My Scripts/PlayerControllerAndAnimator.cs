@@ -21,6 +21,8 @@ public class PlayerControllerAndAnimator : MonoBehaviour
     private bool doubleJump;
     private bool isfacingRight = true;
 
+    public int extraJumps;
+
     private bool isAttacking = false;
     private GameObject attackArea = default;
     private float timeToAttack = 0.25f;
@@ -34,6 +36,7 @@ public class PlayerControllerAndAnimator : MonoBehaviour
         anim = GetComponent<Animator>();
         rb = GetComponentInParent<Rigidbody2D>();
         attackArea = transform.GetChild(0).gameObject;
+        
     }
 
     private void Update()
@@ -51,13 +54,15 @@ public class PlayerControllerAndAnimator : MonoBehaviour
 
         if (isGrounded == true)
         {
-            doubleJump = false;
+            doubleJump = !doubleJump;
             anim.SetBool("isJumping", false);
+            
         }
         else
         {
             anim.SetBool("isJumping", true);
         }
+
 
         if (Input.GetKey(KeyCode.W) && isJumping == true)
         {
@@ -65,6 +70,7 @@ public class PlayerControllerAndAnimator : MonoBehaviour
             {
                 rb.velocity = Vector2.up * jumpForce;
                 jumpTimeCounter -= Time.deltaTime;
+                
             }
             else
             {
@@ -73,35 +79,19 @@ public class PlayerControllerAndAnimator : MonoBehaviour
             
         }
 
-        if (Input.GetKeyUp(KeyCode.W))
+        if (Input.GetKey(KeyCode.W) && extraJumps > 0)
         {
-            isJumping = false;
+            rb.velocity = Vector2.up * jumpForce;
+            extraJumps--;
         }
-
-        if (isGrounded == false && doubleJump == false && Input.GetKeyDown(KeyCode.W))
+        else if(Input.GetKey(KeyCode.W) && extraJumps == 0 && isGrounded == true)
         {
-            isJumping = true;
-            doubleJump = true;
-            jumpTimeCounter = jumpTime;
             rb.velocity = Vector2.up * jumpForce;
         }
 
-        if (Input.GetKey(KeyCode.W) && doubleJump == true)
+        if (Input.GetKeyUp(KeyCode.W))
         {
-            if (jumpTimeCounter > 0)
-            {
-                rb.velocity = Vector2.up * jumpForce;
-                jumpTimeCounter -= Time.deltaTime;
-            }
-            else
-            {
-                doubleJump = false;
-            }
-
-        }
-
-        if(Vector2.up * jumpForce > 0.5f)
-        {
+            isJumping = false;
             doubleJump = false;
         }
 
