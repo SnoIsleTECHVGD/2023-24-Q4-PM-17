@@ -15,10 +15,7 @@ public class waitatposition : MonoBehaviour
 
     void Update()
     {
-        if ( transform.position.y == -50.965)
-        {
-            WaitTime();
-        }
+       
         Vector2 point = currentPoint.position - transform.position;
 
         if (currentPoint == pointb.transform)
@@ -41,6 +38,9 @@ public class waitatposition : MonoBehaviour
             Flip();
             currentPoint = pointb.transform;
         }
+
+
+       
     }
     void Start()
     {
@@ -53,8 +53,9 @@ public class waitatposition : MonoBehaviour
 
     private IEnumerator WaitTime()
     {
-        System.Threading.Thread.Sleep(7000);
-        yield return WaitTime();
+
+        yield return new WaitForSeconds(7) ;
+
     }
     private void Flip()
     {

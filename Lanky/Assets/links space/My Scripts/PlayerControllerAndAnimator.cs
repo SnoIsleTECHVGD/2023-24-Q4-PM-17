@@ -100,10 +100,7 @@ public class PlayerControllerAndAnimator : MonoBehaviour
 
         }
 
-        if(Vector2.up * jumpForce > 0.5f)
-        {
-            doubleJump = false;
-        }
+       
 
         float moveInput = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);

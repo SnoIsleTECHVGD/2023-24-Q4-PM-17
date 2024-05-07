@@ -30,8 +30,8 @@ public class SWITCHSCENECAM : MonoBehaviour
         }
         if (inPortal == true && CompareTag("portal4"))
         {
-            worldCams[0].SetActive(false);
-            worldCams[2].SetActive(true);
+            worldCams[0].SetActive(true);
+            worldCams[2].SetActive(false);
         }
 
 
