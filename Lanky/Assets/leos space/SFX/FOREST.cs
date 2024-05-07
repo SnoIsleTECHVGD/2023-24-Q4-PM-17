@@ -5,7 +5,7 @@ using UnityEngine;
 public class FOREST : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
+    void update()
     {
         AudioManager.Instance.MusicPLayer("FOREST");
     }
