@@ -11,10 +11,14 @@ TagManager:
   - portaltwo
   - pin1
   - pin3
-  - pin2
+  - CloudInBottle
   - healthing
   - Crate
   - Ground
+  - portal3
+  - portal2
+  - portal4
+  - portal1
   layers:
   - Default
   - TransparentFX

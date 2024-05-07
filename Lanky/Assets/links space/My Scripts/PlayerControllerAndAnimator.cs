@@ -10,7 +10,7 @@ public class PlayerControllerAndAnimator : MonoBehaviour
     public float jumpForce;
     private bool moveInput;
 
-    private bool isGrounded;
+  
     public Transform feetPos;
     public float checkRadius;
     public LayerMask whatIsGround;
@@ -18,7 +18,7 @@ public class PlayerControllerAndAnimator : MonoBehaviour
     private float jumpTimeCounter;
     public float jumpTime = 0.1f;
     private bool isJumping;
-    private bool doubleJump;
+    private bool doubleJump = false;
     private bool isfacingRight = true;
 
     private bool isAttacking = false;
@@ -39,68 +39,48 @@ public class PlayerControllerAndAnimator : MonoBehaviour
     private void Update()
     {
         
-        isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
-
-        if(isGrounded == true && Input.GetKeyDown(KeyCode.W))
+        if(Input.GetKeyDown(KeyCode.W))
         {
-            anim.SetTrigger("takeOff");
-            isJumping = true;
-            jumpTimeCounter = 0.1f;
-            rb.velocity = Vector2.up * jumpForce;
+            if( isGrounded() || doubleJump)
+            {
+                AudioManager.Instance.PlaySFX("jump");
+                doubleJump = !doubleJump;
+                anim.SetTrigger("takeOff");
+                isJumping = true;
+                jumpTimeCounter = 0.1f;
+                rb.velocity = Vector2.up * jumpForce;
+
+            }
         }
 
-        if (isGrounded == true)
+        if (isGrounded())
         {
             doubleJump = false;
             anim.SetBool("isJumping", false);
         }
+
+        if(isGrounded() && !Input.GetKeyDown(KeyCode.W))
+        {
+          
+            doubleJump = false; 
+        }
+       
         else
         {
             anim.SetBool("isJumping", true);
         }
-
-        if (Input.GetKey(KeyCode.W) && isJumping == true)
-        {
-            if(jumpTimeCounter > 0)
-            {
-                rb.velocity = Vector2.up * jumpForce;
-                jumpTimeCounter -= Time.deltaTime;
-            }
-            else
-            {
-                isJumping = false;
-            }
-            
-        }
-
-        if (Input.GetKeyUp(KeyCode.W))
-        {
-            isJumping = false;
-        }
-
-        if (isGrounded == false && doubleJump == false && Input.GetKeyDown(KeyCode.W))
+        if ( isGrounded() == false)
         {
             isJumping = true;
-            doubleJump = true;
-            jumpTimeCounter = jumpTime;
-            rb.velocity = Vector2.up * jumpForce;
         }
-
-        if (Input.GetKey(KeyCode.W) && doubleJump == true)
+        if ( isJumping == true)
         {
-            if (jumpTimeCounter > 0)
-            {
-                rb.velocity = Vector2.up * jumpForce;
-                jumpTimeCounter -= Time.deltaTime;
-            }
-            else
-            {
-                doubleJump = false;
-            }
-
+            doubleJump = true;
         }
 
        
+
+ 
 
         float moveInput = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
@@ -108,9 +88,11 @@ public class PlayerControllerAndAnimator : MonoBehaviour
         if (moveInput == 0)
         {
             anim.SetBool("isRunning", false);
+
         }
         else
         {
+         
             anim.SetBool("isRunning", true);
         }
 
@@ -168,7 +150,11 @@ public class PlayerControllerAndAnimator : MonoBehaviour
         {
             isJumping = false;
         }
+       
     }
 
-
+    private bool isGrounded()
+    {
+        return Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
+    }
 }

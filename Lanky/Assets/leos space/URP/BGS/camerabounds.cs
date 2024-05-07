@@ -36,6 +36,7 @@ public class camerabounds : MonoBehaviour
       
         Vector3 smoothPos = Vector3.Lerp(transform.position, boundedPos, smoothSpeed * Time.fixedDeltaTime);
         transform.position = smoothPos;
+      
 
     }
 

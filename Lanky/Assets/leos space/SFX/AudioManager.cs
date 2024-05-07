@@ -25,7 +25,7 @@ public class AudioManager : MonoBehaviour
 
     public void Start()
     {
-        AudioManager.Instance.MusicPLayer("MAGIC");
+       
     }
 
 

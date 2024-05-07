@@ -1,0 +1,17 @@
+k to add the enemies 
+to add the enemies is as follows
+
+the walking enemy 
+first take the prefab out of my folder then place it to the space and size it down.
+add to point as empty objects that will the points to walk to and from
+make sure it has a RB2D and colider
+freeze the z on the rb2D
+the main script it needs is the MeleeEmeny one 
+
+
+
+the shoowing enemy
+put the prefab in and fill out the publiv varablies 
+face it the way to way to to shoot and change the distance that you want it to wait to shoot.
+
+
