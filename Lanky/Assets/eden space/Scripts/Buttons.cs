@@ -21,6 +21,6 @@ public class Buttons : MonoBehaviour
     }
     public void Title()
     {
-        SceneManager.LoadScene("Main Title");
+        SceneManager.LoadScene("MainTitle");
     }
 }
