@@ -12,8 +12,9 @@ public class health : MonoBehaviour
     public GameObject player;
     public int HealthP;
     public int NumOfHearts;
-    public Animator[] hearts;
-
+    public Image[] hearts;
+    public Sprite fullHeart;
+    public Sprite emptyHeart;
     void Update()
     {
         if (HealthP <= 0)
@@ -32,11 +33,19 @@ public class health : MonoBehaviour
         {
             if (i  >= HealthP)
             {
-                hearts[i].SetBool("HeartOn", true);
+                hearts[i].sprite = fullHeart;
             }
             else
             {
-                hearts[i].SetBool("HeartOn", false);
+                hearts[i].sprite = emptyHeart;
+            }
+            if(i < NumOfHearts)
+            {
+                hearts[i].enabled = true;
+            }
+            else
+            {
+                hearts[i].enabled = false;
             }
        
         }
@@ -47,11 +56,19 @@ public class health : MonoBehaviour
 
             if (collision.gameObject.tag == "dmgthing")
             {
-                HealthP -= 1;
+            // StartCoroutine(Waittime)(2000);
+            HealthP -= 1;
 
             }
 
         }
+  //  private IEnumerator Waittime()
+   // {
+    //    yield return new WaitForSeconds(2000); 
+  //  }
+    
+
+    
 
 
     internal static void Damage(int damage)
