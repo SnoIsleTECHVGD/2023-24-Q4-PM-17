@@ -790,8 +790,8 @@ MonoBehaviour:
   - {fileID: 6210878174881954759}
   - {fileID: 6210878175189293864}
   m_Bounds:
-    m_Center: {x: 0.05226928, y: -0.07903704, z: 0}
-    m_Extent: {x: 0.44582403, y: 0.40399334, z: 0}
+    m_Center: {x: 0.05226928, y: -0.0790399, z: 0}
+    m_Extent: {x: 0.44582403, y: 0.4039943, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -827,14 +827,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69f485b589ab53d4fba8e71b62bce93f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2.5
-  jumpForce: 2.5
+  speed: 1.7
+  jumpForce: 3
   feetPos: {fileID: 6210878175624480939}
-  checkRadius: 2
+  checkRadius: 0.2
   whatIsGround:
     serializedVersion: 2
     m_Bits: 128
   jumpTime: 1
+  extraJumps: 2
 --- !u!114 &6210878175703855711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -867,6 +868,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  fullHeart: {fileID: 0}
+  emptyHeart: {fileID: 0}
 --- !u!1 &6210878175704286906
 GameObject:
   m_ObjectHideFlags: 0
@@ -1069,7 +1072,7 @@ Transform:
   m_Children:
   - {fileID: 6210878175703855697}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &6210878176194954543
 Rigidbody2D:
@@ -1291,8 +1294,8 @@ MonoBehaviour:
   - {fileID: 6210878175384144933}
   - {fileID: 6210878174521633286}
   m_Bounds:
-    m_Center: {x: -0.002081424, y: 0.09822251, z: 0}
-    m_Extent: {x: 0.15057528, y: 0.22964273, z: 0}
+    m_Center: {x: -0.0020795166, y: 0.09822062, z: 0}
+    m_Extent: {x: 0.15057528, y: 0.22964275, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
