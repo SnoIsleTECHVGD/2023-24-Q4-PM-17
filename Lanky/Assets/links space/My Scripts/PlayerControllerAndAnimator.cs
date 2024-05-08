@@ -56,6 +56,7 @@ public class PlayerControllerAndAnimator : MonoBehaviour
         {
             doubleJump = !doubleJump;
             anim.SetBool("isJumping", false);
+            extraJumps = 2;
             
         }
         else
@@ -82,7 +83,7 @@ public class PlayerControllerAndAnimator : MonoBehaviour
         if (Input.GetKey(KeyCode.W) && extraJumps > 0)
         {
             rb.velocity = Vector2.up * jumpForce;
-            extraJumps--;
+            extraJumps = extraJumps - 1;
         }
         else if(Input.GetKey(KeyCode.W) && extraJumps == 0 && isGrounded == true)
         {
