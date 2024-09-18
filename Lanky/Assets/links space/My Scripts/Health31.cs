@@ -5,13 +5,13 @@ using UnityEngine;
 public class Health31 : MonoBehaviour
 {
     [SerializeField] private int health = 100;
-
+ 
     private int MAX_HEALTH = 100;
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.G))
+       if(Input.GetKeyDown(KeyCode.G))
         {
             Damage(10);
         }
@@ -37,4 +37,13 @@ public class Health31 : MonoBehaviour
         Debug.Log("Dead X _ X");
         Destroy(gameObject);
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+       if( collision.gameObject.tag == "Enemy")
+        {
+            Damage(10);
+        }
+    }
+
 }

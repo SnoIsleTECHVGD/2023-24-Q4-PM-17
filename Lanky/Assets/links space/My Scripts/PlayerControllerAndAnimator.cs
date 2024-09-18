@@ -57,6 +57,8 @@ public class PlayerControllerAndAnimator : MonoBehaviour
             doubleJump = !doubleJump;
             anim.SetBool("isJumping", false);
             extraJumps = 2;
+            shield.shieldUp = false;
+
             
         }
         else
