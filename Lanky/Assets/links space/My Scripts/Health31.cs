@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Health31 : MonoBehaviour
@@ -38,9 +40,17 @@ public class Health31 : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
        if( collision.gameObject.tag == "Enemy")
-        {
-            Damage(10);
-        }
+       {
+            if(collision.gameObject.tag == "shield")
+            {
+                Damage(0);
+            }
+            else
+            {
+                Damage(10);
+            }
+       
+       }
     }
 
 }
