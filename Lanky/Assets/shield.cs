@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class shield : MonoBehaviour
 {
-    public GameObject player;
-    private bool isfacingRight;
+    public GameObject theShield;
     private float velocity;
-    public static bool shieldUp = true;
+    public static bool canShield = false;
+    public PlayerControllerAndAnimator movement;
+    public static bool isShielding = false;
     
     void Start()
     {
@@ -17,18 +18,35 @@ public class shield : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(player.transform.localPosition.x, player.transform.localPosition.y,player.transform.localPosition.z);
-
+        theShield.transform.position = new Vector3(transform.localPosition.x,transform.localPosition.y,transform.localPosition.z);
        
+       
+
     }
 
     private void FixedUpdate()
     {
-        velocity = player.GetComponent<Rigidbody2D>().velocity.x;
+      
 
-        if (Input.GetKeyDown(KeyCode.F) && !shieldUp)
+        if (Input.GetKeyDown(KeyCode.F) && canShield)
         {
-            velocity = 0;
+            theShield.SetActive(true);
+            isShielding = true;
+            movement.GetComponent<PlayerControllerAndAnimator>().enabled = false;
+            theShield.GetComponent<Health31>().enabled = false;
+        }
+
+        if(Input.GetKeyUp(KeyCode.F) && isShielding)
+        {
+            theShield.SetActive(false);
+            movement.GetComponent<PlayerControllerAndAnimator>().enabled = true;
+            isShielding = false;
+        }
+
+
+        //if(Input.GetKeyDown(KeyCode.F) && !shieldUp)
+        {
+            //movement.SetActive(false);
         }
     }
 

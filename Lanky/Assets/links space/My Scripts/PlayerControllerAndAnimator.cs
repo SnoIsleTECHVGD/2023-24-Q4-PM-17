@@ -29,6 +29,10 @@ public class PlayerControllerAndAnimator : MonoBehaviour
     private float timer = 0f;
 
 
+    public GameObject player;
+    private float velocity;
+    
+
     private Animator anim;
     
     private void Start()
@@ -57,13 +61,14 @@ public class PlayerControllerAndAnimator : MonoBehaviour
             doubleJump = !doubleJump;
             anim.SetBool("isJumping", false);
             extraJumps = 2;
-            shield.shieldUp = false;
+            shield.canShield = true;
 
             
         }
         else
         {
             anim.SetBool("isJumping", true);
+           shield.canShield = false;
         }
 
 
@@ -98,8 +103,11 @@ public class PlayerControllerAndAnimator : MonoBehaviour
             doubleJump = false;
         }
 
+
         float moveInput = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
+        
+       
 
         if (moveInput == 0)
         {
@@ -142,6 +150,9 @@ public class PlayerControllerAndAnimator : MonoBehaviour
                 attackArea.SetActive(isAttacking);
             }
         }
+
+
+        
     }
 
     void Flip()
