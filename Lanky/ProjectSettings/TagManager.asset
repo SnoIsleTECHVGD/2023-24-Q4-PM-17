@@ -19,11 +19,12 @@ TagManager:
   - portal2
   - portal4
   - portal1
+  - Enemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Shield
   - Water
   - UI
   - A

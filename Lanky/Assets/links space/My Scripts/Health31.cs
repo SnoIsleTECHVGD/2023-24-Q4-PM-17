@@ -11,13 +11,10 @@ public class Health31 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       if(Input.GetKeyDown(KeyCode.G))
-        {
-            Damage(10);
-        }
+      
     }
 
-    public void Damage(int amount)
+    public  void Damage(int amount)
     {
         if(amount < 0)
         {
