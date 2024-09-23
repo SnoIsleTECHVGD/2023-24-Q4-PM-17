@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BallAndChainAndHook : MonoBehaviour
@@ -7,23 +8,105 @@ public class BallAndChainAndHook : MonoBehaviour
     public GameObject pinwheel;
     private int movespeed = 13;
     [SerializeField] public GameObject player;
+    public float maxDistance;
+    public Vector2 target;
+    private bool extending;
+    private bool retracting;
 
+    private Vector2 wheelStartPoint;
+    private float currentDistance;
 
     void Start()
     {
-
+        wheelStartPoint = player.transform.position;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.E))
+        controller();
+        
+        
+        if(extending)
         {
-            pinwheel.transform.position += new Vector3(movespeed * Time.deltaTime, 0, 0);
+            Extension();
         }
-        else if(Input.GetKeyUp(KeyCode.E))
+        else if (retracting)
         {
-            pinwheel.transform.position += new Vector3(player.transform.position.x * Time.deltaTime, player.transform.position.y * Time.deltaTime, player.transform.position.z * Time.deltaTime);
+            Retraction();
+        }
+        
+        
+        //if (Input.GetKey(KeyCode.E))
+        {
+           // pinwheel.transform.position += new Vector3(movespeed * Time.deltaTime, 0, 0);
+        }
+       // else if(Input.GetKeyUp(KeyCode.E))
+        {
+           // pinwheel.transform.position += new Vector3(player.transform.position.x * Time.deltaTime, player.transform.position.y * Time.deltaTime, player.transform.position.z * Time.deltaTime);
         }
     }
+
+
+    void controller()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            extending = true;
+            retracting = false;
+            target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            
+        }
+
+
+        if(Input.GetKeyUp(KeyCode.E))
+        {
+            extending = false;
+            retracting = true;
+        }
+    }
+
+
+    void Extension()
+    {
+        float exceleration = movespeed * Time.deltaTime;
+
+
+
+        pinwheel.transform.position = Vector2.MoveTowards(pinwheel.transform.position, target, exceleration);
+        currentDistance = Vector2.Distance(player.transform.position,pinwheel.transform.position);
+
+        if (currentDistance >= maxDistance || pinwheel.transform.position == (Vector3)target)
+        {
+            extending = false;
+            retracting = true;
+
+        }
+    }
+
+
+    void Retraction()
+    {
+        float exceleration = movespeed * Time.deltaTime;
+
+        pinwheel.transform.position = Vector2.MoveTowards(pinwheel.transform.position,player.transform.position,exceleration);
+        
+        if( pinwheel.transform.position == player.transform.position)
+        {
+            retracting = false;
+            WheelHasBeenReset();
+            
+        }
+    }
+
+
+    void WheelHasBeenReset()
+    {
+        currentDistance = 0f;
+        pinwheel.transform.position = player.transform.position;
+    }
+
 }
+
+

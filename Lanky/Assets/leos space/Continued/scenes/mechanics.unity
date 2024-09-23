@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 323957290}
   - component: {fileID: 323957291}
   m_Layer: 13
-  m_Name: GameObject
+  m_Name: MECHANICS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -250,6 +250,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pinwheel: {fileID: 1065545526}
   player: {fileID: 1708929486}
+  maxDistance: 15
+  target: {x: -8.26, y: 1.1}
 --- !u!1 &492968017
 GameObject:
   m_ObjectHideFlags: 0
@@ -594,7 +596,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1464224370}
   m_Layer: 13
-  m_Name: Attacking Mechanics
+  m_Name: GUST
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
