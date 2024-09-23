@@ -22,20 +22,23 @@ public class shield : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.F) && canShield)
         {
+         theShield.transform.position = new Vector2(transform.position.x, transform.position.y);
+            
             theShield.SetActive(true);
             isShielding = true;
+            disableHealth.GetComponent<Health31>().enabled = false;
             movement.GetComponent<PlayerControllerAndAnimator>().enabled = false;
             theShield.GetComponent<Health31>().enabled = false;
-            disableHealth.GetComponent<Health31>().enabled = false;
         }
 
         if (Input.GetKeyUp(KeyCode.F) && isShielding)
         {
             theShield.SetActive(false);
+            disableHealth.GetComponent<Health31>().enabled = true;
             movement.GetComponent<PlayerControllerAndAnimator>().enabled = true;
             isShielding = false;
-            disableHealth.GetComponent<Health31>().enabled = true;
         }
+
 
 
     }

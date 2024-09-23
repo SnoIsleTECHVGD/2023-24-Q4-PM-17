@@ -41,14 +41,9 @@ public class Health31 : MonoBehaviour
     {
        if( collision.gameObject.tag == "Enemy")
        {
-            if(collision.gameObject.tag == "shield")
-            {
-                Damage(0);
-            }
-            else
-            {
+       
                 Damage(10);
-            }
+            
        
        }
     }
