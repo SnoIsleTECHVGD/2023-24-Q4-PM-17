@@ -48,6 +48,9 @@ public class PlayerControllerAndAnimator : MonoBehaviour
         
         isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
 
+
+
+
         if(isGrounded == true && Input.GetKeyDown(KeyCode.W))
         {
             anim.SetTrigger("takeOff");
@@ -120,8 +123,8 @@ public class PlayerControllerAndAnimator : MonoBehaviour
 
         if (isfacingRight == true && moveInput < 0)
         {
+            transform.eulerAngles = new Vector2(0, 0);
             Flip();
-            transform.eulerAngles = new Vector2(0, 180);
         }
         else if (isfacingRight == false && moveInput > 0)
         {
@@ -150,7 +153,6 @@ public class PlayerControllerAndAnimator : MonoBehaviour
                 attackArea.SetActive(isAttacking);
             }
         }
-
 
         
     }
