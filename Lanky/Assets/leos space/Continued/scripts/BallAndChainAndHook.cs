@@ -12,9 +12,12 @@ public class BallAndChainAndHook : MonoBehaviour
     public Vector2 target;
     private bool extending;
     private bool retracting;
+    public LineRenderer theLine;
 
+    
     private Vector2 wheelStartPoint;
     private float currentDistance;
+    
 
     void Start()
     {
@@ -107,6 +110,19 @@ public class BallAndChainAndHook : MonoBehaviour
         pinwheel.transform.position = player.transform.position;
     }
 
+
+
+
+
+
+    void Chain()
+    {
+        if (theLine != null )
+        {
+            theLine.SetPosition(0,player.transform.position);
+            theLine.SetPosition(1, pinwheel.transform.position);
+        }
+    }
 }
 
 
