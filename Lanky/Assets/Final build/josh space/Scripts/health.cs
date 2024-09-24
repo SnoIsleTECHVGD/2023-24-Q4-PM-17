@@ -71,9 +71,9 @@ public class health : MonoBehaviour
     
 
 
-    internal static void Damage(int damage)
+    internal void Damage(int damage)
     {
-        throw new NotImplementedException();
+        
     }
 
     private void OnTriggerEnter2D(Collider2D trigger2D)
