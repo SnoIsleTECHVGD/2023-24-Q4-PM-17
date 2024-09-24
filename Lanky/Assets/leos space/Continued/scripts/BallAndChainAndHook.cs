@@ -20,6 +20,7 @@ public class BallAndChainAndHook : MonoBehaviour
 
     public LineRenderer pinString;
     public GameObject attackArea;
+    public static GameObject hookedEnemy;
 
     void Start()
     {
@@ -123,6 +124,7 @@ public class BallAndChainAndHook : MonoBehaviour
     {
         currentDistance = 0f;
         attackArea.SetActive(false);
+        AttackArea.isHooked = false;
         pinwheel.transform.position = player.transform.position;
         FREEZE.GetComponent<PlayerControllerAndAnimator>().enabled = true;
         DISABLE.SetBool("isRunning", true);
@@ -137,6 +139,12 @@ public class BallAndChainAndHook : MonoBehaviour
             pinString.SetPosition(0, player.transform.position);
             pinString.SetPosition(1, pinwheel.transform.position);
         }
+    }
+
+    void Hook()
+    {
+        
+
     }
 }
 

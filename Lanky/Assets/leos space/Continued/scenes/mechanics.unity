@@ -294,7 +294,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.05333236
+        value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -302,20 +302,29 @@ LineRenderer:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1
-        value: 0.1199975
-        inSlope: 0.18764555
-        outSlope: 0.18764555
+        time: 0.84237254
+        value: 0
+        inSlope: 0.061711337
+        outSlope: 0.061711337
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.2842105
+        inWeight: 0.2889899
+        outWeight: 1
+      - serializedVersion: 3
+        time: 1
+        value: 0.03998804
+        inSlope: 0.26665527
+        outSlope: 0.26665527
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 1
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
+      key0: {r: 0.20754719, g: 0.18698826, b: 0.18698826, a: 1}
       key1: {r: 1, g: 1, b: 1, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -342,16 +351,16 @@ LineRenderer:
       m_Mode: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
-    numCornerVertices: 0
-    numCapVertices: 0
+    numCornerVertices: 47
+    numCapVertices: 9
     alignment: 0
-    textureMode: 0
+    textureMode: 1
     textureScale: {x: 1, y: 1}
     shadowBias: 0.5
     generateLightingData: 0
   m_MaskInteraction: 0
   m_UseWorldSpace: 1
-  m_Loop: 0
+  m_Loop: 1
   m_ApplyActiveColorSpace: 1
 --- !u!1 &492968017
 GameObject:
@@ -849,7 +858,6 @@ GameObject:
   - component: {fileID: 1962574803}
   - component: {fileID: 1962574801}
   - component: {fileID: 1962574805}
-  - component: {fileID: 1962574806}
   m_Layer: 12
   m_Name: Square (1)
   m_TagString: Enemy
@@ -943,7 +951,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1962574800}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.41, y: -1.84, z: 0}
+  m_LocalPosition: {x: 1.86, y: 2.51, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -963,27 +971,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 33
---- !u!50 &1962574806
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1962574800}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!212 &3052363409200455106
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1108,7 +1095,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6210878174428300350}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.32, y: -1.47, z: 0}
+  m_LocalPosition: {x: -8.32, y: -1.598, z: 0}
   m_LocalScale: {x: 0.45, y: 0.45, z: 0.45}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -1694,6 +1681,7 @@ MonoBehaviour:
     m_Bits: 128
   jumpTime: 2.28
   extraJumps: 2
+  attackArea: {fileID: 6210878175352593219}
   player: {fileID: 6210878174428300350}
 --- !u!212 &6210878175054459716
 SpriteRenderer:
@@ -1786,8 +1774,8 @@ MonoBehaviour:
   - {fileID: 6210878176345045720}
   - {fileID: 6210878175572351543}
   m_Bounds:
-    m_Center: {x: 0.0522691, y: -0.079039186, z: 0}
-    m_Extent: {x: 0.44582427, y: 0.40399352, z: 0}
+    m_Center: {x: 0.0522691, y: -0.079039276, z: 0}
+    m_Extent: {x: 0.44582427, y: 0.40399355, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1803,11 +1791,11 @@ Transform:
   m_LocalScale: {x: 3.1012511, y: 3.3854153, z: 3.5082026}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 7713601625645199591}
   - {fileID: 6210878174521101283}
   - {fileID: 6210878176137687265}
   - {fileID: 6210878174890503417}
   - {fileID: 6210878176211675517}
+  - {fileID: 7713601625645199591}
   - {fileID: 6210878174931700148}
   m_Father: {fileID: 6210878174428300339}
   m_RootOrder: -1

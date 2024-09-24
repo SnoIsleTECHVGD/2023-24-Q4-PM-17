@@ -24,7 +24,7 @@ public class PlayerControllerAndAnimator : MonoBehaviour
     public int extraJumps;
 
     private bool isAttacking = false;
-    private GameObject attackArea = default;
+    public GameObject attackArea;
     private float timeToAttack = 0.25f;
     private float timer = 0f;
 
@@ -39,7 +39,8 @@ public class PlayerControllerAndAnimator : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         rb = GetComponentInParent<Rigidbody2D>();
-        attackArea = transform.GetChild(0).gameObject;
+       
+
         
     }
 

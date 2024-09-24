@@ -28,7 +28,7 @@ public class shield : MonoBehaviour
             isShielding = true;
             disableHealth.GetComponent<Health31>().enabled = false;
             movement.GetComponent<PlayerControllerAndAnimator>().enabled = false;
-            theShield.GetComponent<Health31>().enabled = false;
+            
         }
 
         if (Input.GetKeyUp(KeyCode.F) && isShielding)
