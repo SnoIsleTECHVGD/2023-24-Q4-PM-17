@@ -10,7 +10,7 @@ public class PlayerControllerAndAnimator : MonoBehaviour
     public float jumpForce;
     private bool moveInput;
 
-    private bool isGrounded;
+    public static bool isGrounded;
     public Transform feetPos;
     public float checkRadius;
     public LayerMask whatIsGround;
