@@ -6,7 +6,7 @@ using UnityEngine;
 public class BallAndChainAndHook : MonoBehaviour
 {
     public GameObject pinwheel;
-    private int movespeed = 13;
+    private int movespeed = 10;
     [SerializeField] public GameObject player;
     public float maxDistance;
     public Vector2 target;
@@ -25,6 +25,9 @@ public class BallAndChainAndHook : MonoBehaviour
     public LineRenderer pinString;
     public GameObject attackArea;
     public static GameObject hookedEnemy;
+
+    private float stringThreshold = 0.1f;
+    private bool hookComplete;
 
     void Start()
     {
@@ -94,19 +97,19 @@ public class BallAndChainAndHook : MonoBehaviour
 
     void Extension()
     {
-        FREEZE.GetComponent<PlayerControllerAndAnimator>().enabled = false;
         DISABLE.SetBool("isRunning",false);
+        FREEZE.GetComponent<PlayerControllerAndAnimator>().enabled = false;
         float exceleration = movespeed * Time.deltaTime;
 
 
 
-        pinwheel.transform.position = Vector2.MoveTowards(pinwheel.transform.position, target, exceleration);
+        pinwheel.transform.position = Vector2.Lerp(pinwheel.transform.position, target, exceleration);
         currentDistance = Vector2.Distance(player.transform.position,pinwheel.transform.position);
-
-        if (currentDistance >= maxDistance || pinwheel.transform.position == (Vector3)target)
+        attackArea.SetActive(true);
+        if (currentDistance >= maxDistance || Vector2.Distance(pinwheel.transform.position, target) < stringThreshold)
         {
 
-            attackArea.SetActive(true);
+           
             extending = false;
             retracting = true;
         }
@@ -119,9 +122,9 @@ public class BallAndChainAndHook : MonoBehaviour
     {
         float exceleration = movespeed * Time.deltaTime;
 
-        pinwheel.transform.position = Vector2.MoveTowards(pinwheel.transform.position,player.transform.position,exceleration);
+        pinwheel.transform.position = Vector2.Lerp(pinwheel.transform.position,player.transform.position,exceleration);
         
-        if( pinwheel.transform.position == player.transform.position)
+        if(Vector2.Distance(pinwheel.transform.position, player.transform.position) < stringThreshold)
         {
             
             retracting = false;
@@ -137,8 +140,10 @@ public class BallAndChainAndHook : MonoBehaviour
         currentDistance = 0f;
         attackArea.SetActive(false);
         pinwheel.transform.position = player.transform.position;
-        FREEZE.GetComponent<PlayerControllerAndAnimator>().enabled = true;
         DISABLE.SetBool("isRunning", true);
+        FREEZE.GetComponent<PlayerControllerAndAnimator>().enabled = true;
+        AttackArea.isHooked = false;
+        DrawLine();
 
     }
 
@@ -156,9 +161,26 @@ public class BallAndChainAndHook : MonoBehaviour
     void Hook()
     {
         float hookSpeed = movespeed * Time.deltaTime;
-        AttackArea.ballAndChainScript.transform.position = Vector2.MoveTowards(AttackArea.ballAndChainScript.transform.position, player.transform.position, hookSpeed);
         
         
+        if(AttackArea.ballAndChainScript != null)
+        {
+           AttackArea.ballAndChainScript.transform.position = Vector2.Lerp(AttackArea.ballAndChainScript.transform.position, player.transform.position, hookSpeed);
+           pinwheel.transform.position = Vector2.Lerp(pinwheel.transform.position, player.transform.position, hookSpeed);
+          
+           DrawLine();
+
+            Collider2D[] hits = Physics2D.OverlapCircleAll(player.transform.position, stringThreshold);
+            foreach (var hit in hits)
+            {
+                if (hit.gameObject == AttackArea.ballAndChainScript)
+                {
+                    retracting = false;
+                    hookComplete = true;
+                    WheelHasBeenReset();
+                }
+            }
+        }
     }
 }
 

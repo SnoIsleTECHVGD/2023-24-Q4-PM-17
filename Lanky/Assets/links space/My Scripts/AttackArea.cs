@@ -8,6 +8,7 @@ public class AttackArea : MonoBehaviour
     private int damage = 3;
     public static bool isHooked;
     public static GameObject ballAndChainScript;
+   
 
 
 
@@ -34,6 +35,7 @@ public class AttackArea : MonoBehaviour
 
             
         }
+        
         
  
     }
