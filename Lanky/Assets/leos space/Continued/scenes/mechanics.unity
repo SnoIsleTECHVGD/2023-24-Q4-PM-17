@@ -785,6 +785,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1464224370}
+  - component: {fileID: 1464224371}
   m_Layer: 13
   m_Name: GUST
   m_TagString: Untagged
@@ -807,6 +808,21 @@ Transform:
   m_Father: {fileID: 323957290}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1464224371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1464224369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b54c8cfa1bf295d42bbddeb9fa2853b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pinWheelPosition: {fileID: 6210878176287977776}
+  gustPrefabs:
+  - {fileID: 5741557287522503271, guid: 281f5f3dde1ba2b4f9cd762680e84a36, type: 3}
 --- !u!1 &1485634179
 GameObject:
   m_ObjectHideFlags: 0
