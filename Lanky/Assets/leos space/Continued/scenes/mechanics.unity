@@ -822,7 +822,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pinWheelPosition: {fileID: 6210878176287977776}
   gustPrefabs:
-  - {fileID: 5741557287522503271, guid: 281f5f3dde1ba2b4f9cd762680e84a36, type: 3}
+  - {fileID: 7069880758104877299, guid: 8dbe55addeb437c46b53a51b5b4bf520, type: 3}
+  - {fileID: 6978370152078949269, guid: e4e4ebe2aa92a26479649c47fe84497e, type: 3}
 --- !u!1 &1485634179
 GameObject:
   m_ObjectHideFlags: 0

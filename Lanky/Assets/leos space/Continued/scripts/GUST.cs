@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEditor;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 public class GUST : MonoBehaviour
@@ -15,35 +17,41 @@ public class GUST : MonoBehaviour
     public GameObject pinWheelPosition;
     public GameObject[] gustPrefabs;
     private Coroutine currentGust;
+    private Vector2 mousePosition;
+
+    private Rigidbody2D rb;
+    private float gustSpeed = 3f;
 
     void Start()
     {
-
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-        GustController();
-        
-        if( Input.GetMouseButtonUp(0) && lowGustActivated)
+
+        if (Input.GetMouseButtonUp(0) && lowGustActivated)
         {
             LowGust();
         }
-        if (Input.GetMouseButtonUp(0) && midGustActivated)
-        {
-            MidGust();
-        }
-        if (Input.GetMouseButtonUp(0) && highGustActivated)
-        {
-            HighGust();
-        }
+        GustController();
 
+        //if (Input.GetMouseButtonUp(0) && midGustActivated)
+        {
+            //MidGust();
+        }
+        //if (Input.GetMouseButtonUp(0) && highGustActivated)
+        {
+            //HighGust();
+        }
     }
+
 
     void GustController()
     {
-        if (Input.GetMouseButtonDown(0))
+        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        if (Input.GetMouseButtonDown(0) && !lowGustActivated)
         {
             if(currentGust != null)
             {
@@ -52,12 +60,37 @@ public class GUST : MonoBehaviour
 
            
             currentGust = StartCoroutine(LowGustTimer(3)); 
-          
+
         }
         
-        if(Input.GetMouseButtonUp(0))
+       // if (Input.GetMouseButtonDown(0) && lowGustActivated)
         {
-            if(currentGust != null)
+            //if(currentGust != null)
+            {
+                //StopCoroutine(currentGust);
+
+            }
+           
+            //StartCoroutine(MidGustTime(2));
+        }
+
+        //if (Input.GetMouseButtonUp(0) && midGustActivated)
+        {
+            //if( currentGust != null)
+            {
+              //  StopCoroutine(HighGustTime(2));
+            }
+            //Debug.Log("HIGH GUST! ACTIVATED");
+            
+           // StartCoroutine(HighGustTime(3));
+           // highGustActivated = false;
+            
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            if (currentGust != null)
             {
                 StopCoroutine(currentGust);
                 currentGust = null;
@@ -65,38 +98,14 @@ public class GUST : MonoBehaviour
 
             NeautralizeGust();
             BaseGust();
-            return;
-        }
 
-        if (Input.GetMouseButtonDown(0) && lowGustActivated)
-        {
-            if(currentGust != null)
-            {
-                StopCoroutine(currentGust);
-            }
- 
-            
-            StartCoroutine(MidGustTime(2));
-        }
-
-        if (Input.GetMouseButton(0) && midGustActivated)
-        {
-            if( currentGust != null)
-            {
-                StopCoroutine(HighGustTime(2));
-            }
-            Debug.Log("HIGH GUST! ACTIVATED");
-            
-            StartCoroutine(HighGustTime(3));
-            highGustActivated = false;
-            
         }
 
     }
 
-    
-    
-    
+
+
+
     IEnumerator LowGustTimer(float secs)
     {
        
@@ -107,42 +116,48 @@ public class GUST : MonoBehaviour
 
     }
 
-    IEnumerator MidGustTime(float secs)
-    {
-        yield return new WaitForSeconds(secs);
-        Debug.Log("mid gust, ACTIVATED");
-        lowGustActivated = false;
-        midGustActivated = true;
-    }
+   // IEnumerator MidGustTime(float secs)
+    //{
+        //yield return new WaitForSeconds(secs);
+       // Debug.Log("mid gust, ACTIVATED");
+        //lowGustActivated = false;
+       // midGustActivated = true;
+   // }
 
-    IEnumerator HighGustTime(float secs)
-    {
-        yield return new WaitForSeconds(secs);
-        Debug.Log("HIGH gust, ACTIVATED");
-        midGustActivated = false; 
-        highGustActivated = true;
-    }
+    //IEnumerator HighGustTime(float secs)
+    //{
+       // yield return new WaitForSeconds(secs);
+        //Debug.Log("HIGH gust, ACTIVATED");
+        //midGustActivated = false; 
+       // highGustActivated = true;
+    //}
 
 
     void LowGust()
     {
+
+
+      
         Instantiate(gustPrefabs[1], pinWheelPosition.transform.position, transform.rotation);
+        gustPrefabs[1].transform.position = new Vector3(0, 0, 0);
     }
 
     void BaseGust ()
     {
         Instantiate(gustPrefabs[0], pinWheelPosition.transform.position, transform.rotation);
+
+        gustPrefabs[0].transform.position = new Vector3(0, 0, 0);
     }
 
 
-    void MidGust()
-    {
-        Instantiate(gustPrefabs[2], pinWheelPosition.transform.position, transform.rotation);
-    }
-    void HighGust()
-    {
-        Instantiate(gustPrefabs[3], pinWheelPosition.transform.position, transform.rotation);
-    }
+    //void MidGust()
+    //{
+        //Instantiate(gustPrefabs[2], pinWheelPosition.transform.position, transform.rotation);
+    //}
+    //void HighGust()
+    //{
+    //    //Instantiate(gustPrefabs[3], pinWheelPosition.transform.position, transform.rotation);
+    //}
 
 
     void NeautralizeGust()
