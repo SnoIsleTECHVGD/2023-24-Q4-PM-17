@@ -75,7 +75,7 @@ public class BallAndChainAndHook : MonoBehaviour
     }
 
 
-    void controller()
+     void controller()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {

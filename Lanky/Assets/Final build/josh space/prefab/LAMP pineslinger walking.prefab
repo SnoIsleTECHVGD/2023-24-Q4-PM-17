@@ -157,6 +157,37 @@ Transform:
   m_Father: {fileID: 811816112677430918}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1804782453133700788
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6543954592618880567}
+  m_Layer: 0
+  m_Name: EnemyGroundCheck.
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6543954592618880567
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1804782453133700788}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5673840093480717005}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2580122318305311209
 GameObject:
   m_ObjectHideFlags: 0
@@ -205,6 +236,7 @@ GameObject:
   - component: {fileID: 9031392314124498258}
   - component: {fileID: 6726354740075578457}
   - component: {fileID: -6987074665152284373}
+  - component: {fileID: 5813924728394365780}
   m_Layer: 0
   m_Name: LAMP pineslinger walking
   m_TagString: dmgthing
@@ -225,6 +257,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3588370155530092766}
+  - {fileID: 6543954592618880567}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -312,8 +345,8 @@ MonoBehaviour:
   - {fileID: 4792261226854306070}
   - {fileID: 8446728609007943354}
   m_Bounds:
-    m_Center: {x: 0.07902348, y: 0.062800765, z: 0}
-    m_Extent: {x: 0.2651202, y: 0.3102462, z: 0}
+    m_Center: {x: 0.07902351, y: 0.062800884, z: 0}
+    m_Extent: {x: 0.2651202, y: 0.3102461, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -412,6 +445,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 20
+  effectedByFallDamage: {fileID: 0}
+  ammountOfFallDamage: 0
+--- !u!114 &5813924728394365780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2697463681785831690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a034e5f574593846815b63a988882fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  feetPos: {fileID: 6543954592618880567}
+  checkRadius: 0.2
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &2959091427888085424
 GameObject:
   m_ObjectHideFlags: 0
