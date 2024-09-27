@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.Tracing;
 using System.Runtime.CompilerServices;
+using System.Security.Principal;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEditor.Rendering;
@@ -18,9 +20,10 @@ public class GUST : MonoBehaviour
     public GameObject[] gustPrefabs;
     private Coroutine currentGust;
     private Vector2 mousePosition;
+    private GameObject manipulatedGust;
 
     private Rigidbody2D rb;
-    private float gustSpeed = 3f;
+    private float gustSpeed = 4f;
 
     void Start()
     {
@@ -50,7 +53,7 @@ public class GUST : MonoBehaviour
 
     void GustController()
     {
-        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        
         if (Input.GetMouseButtonDown(0) && !lowGustActivated)
         {
             if(currentGust != null)
@@ -137,17 +140,19 @@ public class GUST : MonoBehaviour
     {
 
 
-      
-        Instantiate(gustPrefabs[1], pinWheelPosition.transform.position, transform.rotation);
-        gustPrefabs[1].transform.position = new Vector3(0, 0, 0);
+       
+        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        manipulatedGust = Instantiate(gustPrefabs[1], pinWheelPosition.transform.position, Quaternion.identity);
+        StartCoroutine(GustMovement(manipulatedGust, mousePosition));
     }
 
     void BaseGust ()
     {
-        Instantiate(gustPrefabs[0], pinWheelPosition.transform.position, transform.rotation);
-
-        gustPrefabs[0].transform.position = new Vector3(0, 0, 0);
+        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        manipulatedGust = Instantiate(gustPrefabs[0], pinWheelPosition.transform.position, Quaternion.identity);
+        StartCoroutine(GustMovement(manipulatedGust, mousePosition));
     }
+
 
 
     //void MidGust()
@@ -165,6 +170,30 @@ public class GUST : MonoBehaviour
         lowGustActivated = false;
         midGustActivated = false;
         highGustActivated = false;
+    }
+
+    IEnumerator GustMovement ( GameObject gust, Vector2 target)
+    {
+       
+        Vector2 currentVelocity = Vector2.zero;
+        
+
+        while (Vector2.Distance(gust.transform.position, target) > 0.1f)
+        {
+
+
+            gust.transform.position = Vector2.SmoothDamp(gust.transform.position, target, ref currentVelocity, 0.3f);
+
+            yield return null;
+
+
+        }
+
+        yield return new WaitForSeconds(3);
+        gust.transform.position = target;
+
+        Destroy(gust);
+
     }
 
 }
