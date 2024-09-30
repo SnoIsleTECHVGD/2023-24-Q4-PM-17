@@ -143,6 +143,7 @@ public class GUST : MonoBehaviour
        
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         manipulatedGust = Instantiate(gustPrefabs[1], pinWheelPosition.transform.position, Quaternion.identity);
+        //List.Add manipulated Gust
         StartCoroutine(GustMovement(manipulatedGust, mousePosition));
     }
 

@@ -5,8 +5,12 @@ using UnityEngine;
 public class AttackingMechanics : MonoBehaviour
 {
     public GameObject[] attackMode;
+    public GameObject[] previousGust;
+
+  
 
 
+   
     void Start()
     {
         
@@ -15,6 +19,28 @@ public class AttackingMechanics : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
+
+
+
+        //FindObjectOfType<>
+        
+       if (previousGust == null)
+        {
+            //previousGust = GetComponent<GUST>();
+            {
+                foreach (GameObject obj in previousGust)
+                {
+                    Destroy(obj);
+                }
+            }
+
+
+
+        }
+
+        
         if(Input.GetKeyDown(KeyCode.Alpha1))
         {
             attackMode[0].SetActive(true);
@@ -26,10 +52,16 @@ public class AttackingMechanics : MonoBehaviour
         {
             attackMode[0].SetActive(false);
             attackMode[1].SetActive(true);
+
+
         }
 
+       
 
 
+
+
+        
         
     }
 
@@ -41,9 +73,10 @@ public class AttackingMechanics : MonoBehaviour
 
 
 
-    IEnumerator DestroyGust()
+    IEnumerator DestroyGust(GameObject previousGust)
     {
         yield return new WaitForSeconds(3);
+        Destroy(previousGust);
      
     }
 }
