@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using static UnityEditor.Searcher.SearcherWindow.Alignment;
+using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 public class PlayerControllerAndAnimator : MonoBehaviour
 {
@@ -136,8 +136,12 @@ public class PlayerControllerAndAnimator : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             Attack();
-            anim.SetBool("isAttacking", true);
+           anim.SetBool("isAttacking", true);
+
         }
+        
+  
+        
         else
         {
             anim.SetBool("isAttacking", false);
@@ -166,7 +170,7 @@ public class PlayerControllerAndAnimator : MonoBehaviour
         transform.localScale = Scaler;
     }
 
-    private void Attack()
+    public void Attack()
     {
         isAttacking = true;
         attackArea.SetActive(isAttacking);
