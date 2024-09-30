@@ -203,6 +203,7 @@ MonoBehaviour:
   attackMode:
   - {fileID: 1464224369}
   - {fileID: 481694305}
+  previousGust: []
 --- !u!114 &445192002
 MonoBehaviour:
   m_ObjectHideFlags: 0
