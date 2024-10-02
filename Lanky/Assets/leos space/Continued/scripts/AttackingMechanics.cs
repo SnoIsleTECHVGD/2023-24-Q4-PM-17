@@ -1,16 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 
 public class AttackingMechanics : MonoBehaviour
 {
     public GameObject[] attackMode;
-    public GameObject[] previousGust;
+    public List<GameObject> previousGust = GUST.previousGust;
 
-  
+    
 
 
-   
+
+
     void Start()
     {
         
@@ -20,28 +22,16 @@ public class AttackingMechanics : MonoBehaviour
     void Update()
     {
 
-
-
-
-
-        //FindObjectOfType<>
         
-       if (previousGust == null)
-        {
-            //previousGust = GetComponent<GUST>();
-            {
-                foreach (GameObject obj in previousGust)
-                {
-                    Destroy(obj);
-                }
-            }
 
 
 
-        }
-
+     
+               
         
-        if(Input.GetKeyDown(KeyCode.Alpha1))
+
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             attackMode[0].SetActive(true);
             attackMode[1].SetActive(false);
@@ -52,6 +42,11 @@ public class AttackingMechanics : MonoBehaviour
         {
             attackMode[0].SetActive(false);
             attackMode[1].SetActive(true);
+
+            foreach (GameObject obj in previousGust)
+            {
+                StartCoroutine(DestroyGust(obj));
+            }
 
 
         }

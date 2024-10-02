@@ -58,6 +58,15 @@ public class BallAndChainAndHook : MonoBehaviour
             Retraction();
         }
 
+        //if(AttackArea.ballAndChainScript == null)
+        {
+            //Retraction();
+        }
+
+
+
+
+
 
 
        
@@ -180,6 +189,12 @@ public class BallAndChainAndHook : MonoBehaviour
                     WheelHasBeenReset();
                 }
             }
+        }
+
+
+        if(AttackArea.ballAndChainScript == null)
+        {
+            Retraction();
         }
     }
 }

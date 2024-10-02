@@ -15,6 +15,9 @@ public class health : MonoBehaviour
     public Image[] hearts;
     public Sprite fullHeart;
     public Sprite emptyHeart;
+
+
+ 
     void Update()
     {
         if (HealthP <= 0)

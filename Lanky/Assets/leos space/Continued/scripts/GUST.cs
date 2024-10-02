@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.Tracing;
@@ -23,8 +24,13 @@ public class GUST : MonoBehaviour
     private GameObject manipulatedGust;
 
     private Rigidbody2D rb;
-    private float gustSpeed = 4f;
+    private static float gustSpeed = 4f;
+    public static List<GameObject> previousGust = new List<GameObject>();
 
+   
+    
+    
+    
     void Start()
     {
        
@@ -51,7 +57,7 @@ public class GUST : MonoBehaviour
     }
 
 
-    void GustController()
+    private void GustController()
     {
         
         if (Input.GetMouseButtonDown(0) && !lowGustActivated)
@@ -136,21 +142,23 @@ public class GUST : MonoBehaviour
     //}
 
 
-    void LowGust()
+   public void LowGust()
     {
 
 
        
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         manipulatedGust = Instantiate(gustPrefabs[1], pinWheelPosition.transform.position, Quaternion.identity);
-        //List.Add manipulated Gust
+        previousGust.Add(manipulatedGust);
         StartCoroutine(GustMovement(manipulatedGust, mousePosition));
+
     }
 
-    void BaseGust ()
+   public void BaseGust ()
     {
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         manipulatedGust = Instantiate(gustPrefabs[0], pinWheelPosition.transform.position, Quaternion.identity);
+        previousGust.Add(manipulatedGust);
         StartCoroutine(GustMovement(manipulatedGust, mousePosition));
     }
 

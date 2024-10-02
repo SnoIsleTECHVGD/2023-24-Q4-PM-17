@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
@@ -28,9 +29,13 @@ public class PlayerControllerAndAnimator : MonoBehaviour
     private float timeToAttack = 0.25f;
     private float timer = 0f;
 
+    private float landCount;
+    private bool canLand = false;
 
     public GameObject player;
     private float velocity;
+    private bool wasGrounded;
+    
     
 
     private Animator anim;
@@ -49,10 +54,26 @@ public class PlayerControllerAndAnimator : MonoBehaviour
         
         isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
 
+        if(isGrounded != true)
+        {
+            canLand = true; 
+        }
+        
+        if( isGrounded && !wasGrounded)
+        {
+            if(canLand)
+            {
+             canLand = false;
+             landCount += 1;
+             StartCoroutine(TumbleCount(landCount));
+             ResetTumble(landCount);
+            }
+            
+        }
+     
+        wasGrounded = isGrounded;
 
-
-
-        if(isGrounded == true && Input.GetKeyDown(KeyCode.W))
+        if (isGrounded == true && Input.GetKeyDown(KeyCode.W))
         {
             anim.SetTrigger("takeOff");
             isJumping = true;
@@ -66,6 +87,7 @@ public class PlayerControllerAndAnimator : MonoBehaviour
             anim.SetBool("isJumping", false);
             extraJumps = 2;
             shield.canShield = true;
+            
 
             
         }
@@ -159,7 +181,10 @@ public class PlayerControllerAndAnimator : MonoBehaviour
             }
         }
 
-        
+
+
+
+      
     }
 
     void Flip()
@@ -185,8 +210,27 @@ public class PlayerControllerAndAnimator : MonoBehaviour
         
     }
 
-    
 
-    
+    IEnumerator TumbleCount (float landcount)
+    {
+        if(landcount == 3)
+        {
+            anim.SetBool("CanTumble", true);
+            anim.SetBool("isJumping", false);
+            yield return new WaitForSeconds(0.5);
+            landCount = 0;
+
+        }
+      
+    }
+    private void ResetTumble ( float landcount)
+    {
+        if(landcount == 0)
+        {
+            anim.SetBool("CanTumble", false);
+        }
+    }
+
+   
 }
 
