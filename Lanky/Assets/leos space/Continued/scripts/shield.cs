@@ -10,6 +10,7 @@ public class shield : MonoBehaviour
     public static bool canShield = false;
     public PlayerControllerAndAnimator movement;
     public static bool isShielding = false;
+    public Animator shieldani; 
     
     void Start()
     {
@@ -23,8 +24,10 @@ public class shield : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F) && canShield)
         {
          theShield.transform.position = new Vector2(transform.position.x, transform.position.y);
-            
+
+            shieldani.SetBool("isRunning", false);
             theShield.SetActive(true);
+            shieldani.SetBool("isShielding",true);
             isShielding = true;
             disableHealth.GetComponent<Health31>().enabled = false;
             movement.GetComponent<PlayerControllerAndAnimator>().enabled = false;
@@ -33,10 +36,7 @@ public class shield : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.F) && isShielding)
         {
-            theShield.SetActive(false);
-            disableHealth.GetComponent<Health31>().enabled = true;
-            movement.GetComponent<PlayerControllerAndAnimator>().enabled = true;
-            isShielding = false;
+          StartCoroutine(ExitShield(0.4f));
         }
 
 
@@ -57,5 +57,18 @@ public class shield : MonoBehaviour
     }
 
 
+
+    IEnumerator ExitShield (float secs)
+    {
+        shieldani.SetBool("isShielding", false);
+        shieldani.SetBool("shieldPopped", true);
+        yield return new WaitForSeconds(secs);
+        theShield.SetActive(false);
+        disableHealth.GetComponent<Health31>().enabled = true;
+        movement.GetComponent<PlayerControllerAndAnimator>().enabled = true;
+        isShielding = false;
+
+    }
+   
 
 }
