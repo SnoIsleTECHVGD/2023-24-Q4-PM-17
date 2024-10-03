@@ -65,8 +65,9 @@ public class PlayerControllerAndAnimator : MonoBehaviour
             {
              canLand = false;
              landCount += 1;
-             StartCoroutine(TumbleCount(landCount));
-             ResetTumble(landCount);
+             TumbleCount(landCount);
+             StartCoroutine(WaitASec(2.3f));
+            
             }
             
         }
@@ -211,22 +212,35 @@ public class PlayerControllerAndAnimator : MonoBehaviour
     }
 
 
-    IEnumerator TumbleCount (float landcount)
+    private void TumbleCount (float landcount)
     {
         if(landcount == 3)
         {
             anim.SetBool("CanTumble", true);
             anim.SetBool("isJumping", false);
-            yield return new WaitForSeconds(0.5);
+            anim.SetBool("isRunning", false);
+
             landCount = 0;
+          
 
         }
       
+    }
+
+
+
+    IEnumerator WaitASec(float secs)
+    {
+        
+        yield return new WaitForSeconds(secs);
+        ResetTumble(landCount);
+     
     }
     private void ResetTumble ( float landcount)
     {
         if(landcount == 0)
         {
+          
             anim.SetBool("CanTumble", false);
         }
     }
