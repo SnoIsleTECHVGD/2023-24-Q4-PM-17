@@ -26,6 +26,7 @@ public class GUST : MonoBehaviour
     private Rigidbody2D rb;
     private static float gustSpeed = 4f;
     public static List<GameObject> previousGust = new List<GameObject>();
+    public Animator gust;
 
    
     
@@ -42,6 +43,8 @@ public class GUST : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0) && lowGustActivated)
         {
+            gust.SetBool("isCharging", false);
+            gust.SetBool("Returned", true);
             LowGust();
         }
         GustController();
@@ -62,6 +65,8 @@ public class GUST : MonoBehaviour
         
         if (Input.GetMouseButtonDown(0) && !lowGustActivated)
         {
+            gust.SetBool("isCharging", true);
+            
             if(currentGust != null)
             {
                 StopCoroutine(currentGust);
