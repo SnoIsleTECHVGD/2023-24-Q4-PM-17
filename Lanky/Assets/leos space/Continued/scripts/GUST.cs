@@ -72,7 +72,7 @@ public class GUST : MonoBehaviour
                 StopCoroutine(currentGust);
             }
 
-           
+            //1.566605 1.354069 -0.06 -0.08
             currentGust = StartCoroutine(LowGustTimer(3)); 
 
         }
