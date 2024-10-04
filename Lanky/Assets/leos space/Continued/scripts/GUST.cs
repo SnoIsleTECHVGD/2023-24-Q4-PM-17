@@ -27,6 +27,9 @@ public class GUST : MonoBehaviour
     private static float gustSpeed = 4f;
     public static List<GameObject> previousGust = new List<GameObject>();
     public Animator gust;
+    public Animator X;
+    public Animator SUCCESS;
+    private bool baseGustOn;
 
    
     
@@ -40,12 +43,23 @@ public class GUST : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetMouseButtonUp(0) && !lowGustActivated)
+        {
+            X.SetBool("incomplete",true);
+            StartCoroutine(ResetAni());
+        }
+
+
 
         if (Input.GetMouseButtonUp(0) && lowGustActivated)
         {
+           
             gust.SetBool("isCharging", false);
+            gust.SetBool("Charged", false);
             gust.SetBool("Returned", true);
+            SUCCESS.SetBool("complete", true);
             LowGust();
+            StartCoroutine(ResetAni());
         }
         GustController();
 
@@ -73,7 +87,8 @@ public class GUST : MonoBehaviour
             }
 
             //1.566605 1.354069 -0.06 -0.08
-            currentGust = StartCoroutine(LowGustTimer(3)); 
+            currentGust = StartCoroutine(LowGustTimer(3));
+           
 
         }
         
@@ -108,10 +123,14 @@ public class GUST : MonoBehaviour
             {
                 StopCoroutine(currentGust);
                 currentGust = null;
+                gust.SetBool("isCharging", false);
+                //X.SetBool("incomplete", true);
+                //StartCoroutine(ResetAni());
             }
 
             NeautralizeGust();
             BaseGust();
+            
 
         }
 
@@ -124,6 +143,7 @@ public class GUST : MonoBehaviour
     {
        
         yield return new WaitForSeconds(secs);
+        gust.SetBool("Charged", true);
         Debug.Log("low gust, ACTIVATED");
         lowGustActivated = true;
 
@@ -184,32 +204,40 @@ public class GUST : MonoBehaviour
         lowGustActivated = false;
         midGustActivated = false;
         highGustActivated = false;
+       
     }
 
-    IEnumerator GustMovement ( GameObject gust, Vector2 target)
+    IEnumerator GustMovement ( GameObject Gust, Vector2 target)
     {
        
         Vector2 currentVelocity = Vector2.zero;
         
 
-        while (Vector2.Distance(gust.transform.position, target) > 0.1f)
+        while (Vector2.Distance(Gust.transform.position, target) > 0.1f)
         {
 
 
-            gust.transform.position = Vector2.SmoothDamp(gust.transform.position, target, ref currentVelocity, 0.3f);
+            Gust.transform.position = Vector2.SmoothDamp(Gust.transform.position, target, ref currentVelocity, 0.3f);
 
             yield return null;
 
 
         }
 
-        yield return new WaitForSeconds(3);
-        gust.transform.position = target;
+        yield return new WaitForSeconds(3.5f);
+        Gust.transform.position = target;
 
-        Destroy(gust);
+        Destroy(Gust);
 
     }
 
+
+    IEnumerator ResetAni ()
+    {
+        yield return new WaitForSeconds(1f);
+        X.SetBool("incomplete",false);
+        SUCCESS.SetBool("complete",false);
+    }
 }
 
 

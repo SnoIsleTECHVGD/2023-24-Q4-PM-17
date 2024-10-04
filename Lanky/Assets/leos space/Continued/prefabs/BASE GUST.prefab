@@ -159,4 +159,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97c0409d15b8cf84ab0d3438b3a30706, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blastHight: {x: 2.2, y: 2.5}
+  blastHight: {x: 2.2, y: 2.94}
