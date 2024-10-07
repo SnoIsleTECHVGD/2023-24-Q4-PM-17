@@ -237,13 +237,6 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-<<<<<<< HEAD:Lanky/Assets/leos space/URP2/URP2.unity
-  m_SortingLayerID: 234938515
-  m_SortingLayer: 0
-=======
-  m_SortingLayerID: 1152298229
-  m_SortingLayer: 4
->>>>>>> f8ad8dd9de23076dff38b23a3c5d2939a5af3753:Lanky/Assets/leos space/URP/URP2/URP2.unity
   m_SortingOrder: 6
   m_Sprite: {fileID: 21300000, guid: 1158ea826ebc02e44a72672551933263, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1037,13 +1030,6 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-<<<<<<< HEAD:Lanky/Assets/leos space/URP2/URP2.unity
-  m_SortingLayerID: -241714685
-  m_SortingLayer: 0
-=======
-  m_SortingLayerID: -459931669
-  m_SortingLayer: -2
->>>>>>> f8ad8dd9de23076dff38b23a3c5d2939a5af3753:Lanky/Assets/leos space/URP/URP2/URP2.unity
   m_SortingOrder: -8
   m_Sprite: {fileID: 21300000, guid: 286731abb45803e4f94aebcc2ac8d849, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1147,11 +1133,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8672419606258923665, guid: eb765e509001bd24490afdb5d0ddad4a, type: 3}
       propertyPath: m_SortingLayer
-<<<<<<< HEAD:Lanky/Assets/leos space/URP2/URP2.unity
-      value: -1
-=======
-      value: -2
->>>>>>> f8ad8dd9de23076dff38b23a3c5d2939a5af3753:Lanky/Assets/leos space/URP/URP2/URP2.unity
       objectReference: {fileID: 0}
     - target: {fileID: 8672419606258923665, guid: eb765e509001bd24490afdb5d0ddad4a, type: 3}
       propertyPath: m_SortingOrder
@@ -1232,13 +1213,6 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-<<<<<<< HEAD:Lanky/Assets/leos space/URP2/URP2.unity
-  m_SortingLayerID: 234938515
-  m_SortingLayer: 0
-=======
-  m_SortingLayerID: 1152298229
-  m_SortingLayer: 4
->>>>>>> f8ad8dd9de23076dff38b23a3c5d2939a5af3753:Lanky/Assets/leos space/URP/URP2/URP2.unity
   m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 143b830641e501141988375776bf52ad, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1478,92 +1452,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD:Lanky/Assets/leos space/URP2/URP2.unity
---- !u!1001 &810847914
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 2
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 8672419606258923664, guid: eb765e509001bd24490afdb5d0ddad4a, type: 3}
-      propertyPath: m_RootOrder
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 8672419606258923664, guid: eb765e509001bd24490afdb5d0ddad4a, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 34.356544
-      objectReference: {fileID: 0}
-    - target: {fileID: 8672419606258923664, guid: eb765e509001bd24490afdb5d0ddad4a, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 21.891638
-      objectReference: {fileID: 0}
-    - target: {fileID: 8672419606258923664, guid: eb765e509001bd24490afdb5d0ddad4a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -6.7411
-      objectReference: {fileID: 0}
-    - target: {fileID: 8672419606258923664, guid: eb765e509001bd24490afdb5d0ddad4a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 4.3381
-      objectReference: {fileID: 0}
-    - target: {fileID: 8672419606258923664, guid: eb765e509001bd24490afdb5d0ddad4a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 9.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8672419606258923664, guid: eb765e509001bd24490afdb5d0ddad4a, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8672419606258923664, guid: eb765e509001bd24490afdb5d0ddad4a, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8672419606258923664, guid: eb765e509001bd24490afdb5d0ddad4a, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8672419606258923664, guid: eb765e509001bd24490afdb5d0ddad4a, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8672419606258923664, guid: eb765e509001bd24490afdb5d0ddad4a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8672419606258923664, guid: eb765e509001bd24490afdb5d0ddad4a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8672419606258923664, guid: eb765e509001bd24490afdb5d0ddad4a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8672419606258923665, guid: eb765e509001bd24490afdb5d0ddad4a, type: 3}
-      propertyPath: m_SortingLayer
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8672419606258923665, guid: eb765e509001bd24490afdb5d0ddad4a, type: 3}
-      propertyPath: m_SortingOrder
-      value: 71
-      objectReference: {fileID: 0}
-    - target: {fileID: 8672419606258923665, guid: eb765e509001bd24490afdb5d0ddad4a, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -1041694605
-      objectReference: {fileID: 0}
-    - target: {fileID: 8672419606258923667, guid: eb765e509001bd24490afdb5d0ddad4a, type: 3}
-      propertyPath: m_Name
-      value: FOG (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8672419606258923667, guid: eb765e509001bd24490afdb5d0ddad4a, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_AddedGameObjects: []
-  m_SourcePrefab: {fileID: 100100000, guid: eb765e509001bd24490afdb5d0ddad4a, type: 3}
-=======
->>>>>>> f8ad8dd9de23076dff38b23a3c5d2939a5af3753:Lanky/Assets/leos space/URP/URP2/URP2.unity
 --- !u!1 &856108485
 GameObject:
   m_ObjectHideFlags: 0
@@ -1620,13 +1508,6 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-<<<<<<< HEAD:Lanky/Assets/leos space/URP2/URP2.unity
-  m_SortingLayerID: -241714685
-  m_SortingLayer: 0
-=======
-  m_SortingLayerID: -459931669
-  m_SortingLayer: -2
->>>>>>> f8ad8dd9de23076dff38b23a3c5d2939a5af3753:Lanky/Assets/leos space/URP/URP2/URP2.unity
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 4bbd7660149c7574db7559eaf2117268, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2881,13 +2762,6 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-<<<<<<< HEAD:Lanky/Assets/leos space/URP2/URP2.unity
-  m_SortingLayerID: -241714685
-  m_SortingLayer: 0
-=======
-  m_SortingLayerID: -459931669
-  m_SortingLayer: -2
->>>>>>> f8ad8dd9de23076dff38b23a3c5d2939a5af3753:Lanky/Assets/leos space/URP/URP2/URP2.unity
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: b6cb43d43aa8a3b4f9c7efcb713d3a4d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2985,13 +2859,6 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-<<<<<<< HEAD:Lanky/Assets/leos space/URP2/URP2.unity
-  m_SortingLayerID: 1017120315
-  m_SortingLayer: 0
-=======
-  m_SortingLayerID: -1173519107
-  m_SortingLayer: 3
->>>>>>> f8ad8dd9de23076dff38b23a3c5d2939a5af3753:Lanky/Assets/leos space/URP/URP2/URP2.unity
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 9c837354ae116fb45a6291255411068d, type: 3}
   m_Color: {r: 0.7169812, g: 0.7169812, b: 0.7169812, a: 1}
@@ -3206,11 +3073,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8672419606258923665, guid: eb765e509001bd24490afdb5d0ddad4a, type: 3}
       propertyPath: m_SortingLayer
-<<<<<<< HEAD:Lanky/Assets/leos space/URP2/URP2.unity
-      value: -1
-=======
-      value: 4
->>>>>>> f8ad8dd9de23076dff38b23a3c5d2939a5af3753:Lanky/Assets/leos space/URP/URP2/URP2.unity
       objectReference: {fileID: 0}
     - target: {fileID: 8672419606258923665, guid: eb765e509001bd24490afdb5d0ddad4a, type: 3}
       propertyPath: m_SortingOrder

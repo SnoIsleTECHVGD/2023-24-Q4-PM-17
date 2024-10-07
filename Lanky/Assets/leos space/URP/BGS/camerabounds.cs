@@ -9,7 +9,7 @@ public class camerabounds : MonoBehaviour
     public Vector3 offset;
     public Vector3 minVal, maxval;
     private bool inPortal;
-    public GameObject GameObject;
+    //public GameObject GameObject;
     
 
     
