@@ -19,6 +19,8 @@ public class WarpPoint : MonoBehaviour
         {
           cam1.SetActive(false);
             cam2.SetActive(true);
+            cam2.tag = ("MainCamera");
+            cam1.tag = ("Untagged");
         }
         //SceneManager.LoadScene(RoomName);
     }

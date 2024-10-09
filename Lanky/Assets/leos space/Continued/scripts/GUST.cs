@@ -30,6 +30,8 @@ public class GUST : MonoBehaviour
     public Animator X;
     public Animator SUCCESS;
     private bool baseGustOn;
+  
+
 
    
     
@@ -46,6 +48,7 @@ public class GUST : MonoBehaviour
         if(Input.GetMouseButtonUp(0) && !lowGustActivated)
         {
             X.SetBool("incomplete",true);
+          
             StartCoroutine(ResetAni());
         }
 
@@ -237,6 +240,7 @@ public class GUST : MonoBehaviour
         yield return new WaitForSeconds(1f);
         X.SetBool("incomplete",false);
         SUCCESS.SetBool("complete",false);
+
     }
 }
 
