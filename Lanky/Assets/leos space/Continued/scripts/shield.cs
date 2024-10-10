@@ -6,11 +6,12 @@ public class shield : MonoBehaviour
 {
     public Health31 disableHealth;
     public GameObject theShield;
-    private float velocity;
     public static bool canShield = false;
     public PlayerControllerAndAnimator movement;
     public static bool isShielding = false;
-    public Animator shieldani; 
+    public Animator shieldani;
+    public Rigidbody2D velocity;
+    public Animator playerAni;
     
     void Start()
     {
@@ -25,11 +26,12 @@ public class shield : MonoBehaviour
         {
          theShield.transform.position = new Vector2(transform.position.x, transform.position.y);
 
-            shieldani.SetBool("isRunning", false);
+            playerAni.SetBool("isRunning", false);
             theShield.SetActive(true);
             shieldani.SetBool("isShielding",true);
             isShielding = true;
             disableHealth.GetComponent<Health31>().enabled = false;
+            velocity.velocity = new Vector2(0,0);
             movement.GetComponent<PlayerControllerAndAnimator>().enabled = false;
             
         }
