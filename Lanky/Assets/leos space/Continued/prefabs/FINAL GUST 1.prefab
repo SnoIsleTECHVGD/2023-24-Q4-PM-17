@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8657499521053965271}
   - component: {fileID: 6558689874762995183}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: FINAL GUST 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

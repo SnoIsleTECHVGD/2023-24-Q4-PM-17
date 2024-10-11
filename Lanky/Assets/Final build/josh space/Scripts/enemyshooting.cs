@@ -17,7 +17,7 @@ public class enemyshooting : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("player");
+        player = GameObject.Find("Lanky_Character");
     }
 
     // Update is called once per frame
