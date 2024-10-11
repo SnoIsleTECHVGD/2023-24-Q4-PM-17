@@ -22,6 +22,15 @@ public class WarpPoint : MonoBehaviour
             cam2.tag = ("MainCamera");
             cam1.tag = ("Untagged");
         }
+        if (CompareTag("portal2"))
+        {
+            cam1.SetActive(true);
+            cam2.SetActive(false);
+            cam2.tag = ("Untagged");
+            cam1.tag = ("MainCamera");
+            cam3.tag = ("Untagged");
+        }
+
         //SceneManager.LoadScene(RoomName);
     }
     void Start()
