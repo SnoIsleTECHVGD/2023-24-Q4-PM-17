@@ -8,6 +8,8 @@ public class AttackArea : MonoBehaviour
     private int damage = 3;
     public static bool isHooked;
     public static GameObject ballAndChainScript;
+    public GameObject[] damgeSprite;
+    private SpriteRenderer colorFlash;
    
 
 
@@ -31,6 +33,11 @@ public class AttackArea : MonoBehaviour
         {
             //Debug.Log("you have hit");
             health.Damage(10);
+            collider.GetComponent<flashWhen>().Flash();
+
+
+
+
         }
        
         if (Input.GetKey(KeyCode.R) && collider.CompareTag("Enemy"))
@@ -54,6 +61,9 @@ public class AttackArea : MonoBehaviour
         }
 
     }
+
+
+   
 }
 
 
