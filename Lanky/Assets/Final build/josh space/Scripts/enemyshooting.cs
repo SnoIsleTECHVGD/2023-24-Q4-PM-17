@@ -8,7 +8,7 @@ public class enemyshooting : MonoBehaviour
     public GameObject bullet;
     public Transform bulletpos;
     public float distance;
-    public float distanceBetween;
+    public float distanceBetween = 3f;
     private float timer;
     public GameObject player;
     public GameObject bulletPrefab;
@@ -17,13 +17,14 @@ public class enemyshooting : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("Lanky_Character");
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         distance = Vector2.Distance(transform.position, player.transform.position);
+      
         Vector2 direction = player.transform.position - transform.position;
         direction.Normalize();
 
@@ -51,10 +52,14 @@ public class enemyshooting : MonoBehaviour
     }
     void shoot()
     {
-        
         GameObject bullet = Instantiate(bulletPrefab, FirePoint.position, FirePoint.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        rb.AddForce(FirePoint.up * bulletForce, ForceMode2D.Force);
+        Vector2 direction = (player.transform.position - FirePoint.position).normalized;
+
+
+
+        rb.AddForce(direction, ForceMode2D.Impulse);
+
 
 
     }
