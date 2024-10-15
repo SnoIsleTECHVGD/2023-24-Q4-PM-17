@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Activation : MonoBehaviour
 {
-    public PLatform platform;
+    public MovePlatform platform;
     public waitatposition wait;
     public GameObject[] activationLights;
     private void OnTriggerEnter2D(Collider2D collision)

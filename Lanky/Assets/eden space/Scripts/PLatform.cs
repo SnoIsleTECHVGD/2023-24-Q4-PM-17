@@ -46,12 +46,12 @@ public class PLatform : MonoBehaviour
             rb.velocity = new Vector2(0, speed);
         }
 
-        if (Vector2.Distance(transform.position, currentPoint.position) < 0.5f && currentPoint == pointb.transform)
+        if (Vector2.Distance(transform.position, currentPoint.position) < 0.1f && currentPoint == pointb.transform)
         {
            
             currentPoint = PointA.transform;
         }
-        if (Vector2.Distance(transform.position, currentPoint.position) < 0.5f && currentPoint == PointA.transform)
+        if (Vector2.Distance(transform.position, currentPoint.position) < 0.1f && currentPoint == PointA.transform)
         {
            
             currentPoint = pointb.transform;

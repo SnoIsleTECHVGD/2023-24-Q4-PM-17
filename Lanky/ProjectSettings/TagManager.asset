@@ -36,10 +36,10 @@ TagManager:
   - ThirdBg
   - Enemy
   - Player
-  - 
-  - 
-  - 
-  - 
+  - Crate
+  - EnemyPlat
+  - INVISWALL
+  - PlatForm
   - 
   - 
   - 
