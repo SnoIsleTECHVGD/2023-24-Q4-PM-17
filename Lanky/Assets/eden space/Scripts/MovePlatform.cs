@@ -22,7 +22,7 @@ public class MovePlatform : MonoBehaviour
         if(!reachedPlat)
         {
 
-            StartCoroutine(waitTime(3f));
+            StartCoroutine(waitTime(5f));
             
             
         }
@@ -31,7 +31,7 @@ public class MovePlatform : MonoBehaviour
         if (reachedPlat)
         {
             
-           StartCoroutine(returnTime(3));
+           StartCoroutine(returnTime(5f));
            
         }
 

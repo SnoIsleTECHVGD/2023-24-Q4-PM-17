@@ -35,6 +35,7 @@ public class PlayerControllerAndAnimator : MonoBehaviour
     public GameObject player;
     private float velocity;
     private bool wasGrounded;
+    public static bool doubleJumpObtained;
     
     
 
@@ -74,13 +75,24 @@ public class PlayerControllerAndAnimator : MonoBehaviour
      
         wasGrounded = isGrounded;
 
-        if (isGrounded == true && Input.GetKeyDown(KeyCode.W))
+        if ( Input.GetKeyDown(KeyCode.W))
         {
-            anim.SetTrigger("takeOff");
-            isJumping = true;
-            jumpTimeCounter = 0.1f;
-            rb.velocity = Vector2.up * jumpForce;
+            if(isGrounded == true || doubleJump && doubleJumpObtained)
+            {
+              rb.velocity = Vector2.up * jumpForce;
+              anim.SetTrigger("takeOff");
+              isJumping = true;
+              jumpTimeCounter = 0.1f;
+              rb.velocity = Vector2.up * jumpForce;
+              doubleJump = !doubleJump;
+                
+            }
         }
+        if (isGrounded == true && !Input.GetKey(KeyCode.W))
+        {
+            doubleJump = false;
+        }
+           
 
         if (isGrounded == true)
         {
@@ -99,35 +111,13 @@ public class PlayerControllerAndAnimator : MonoBehaviour
         }
 
 
-        if (Input.GetKey(KeyCode.W) && isJumping == true)
-        {
-            if(jumpTimeCounter > 0)
-            {
-                rb.velocity = Vector2.up * jumpForce;
-                jumpTimeCounter -= Time.deltaTime;
-                
-            }
-            else
-            {
-                isJumping = false;
-            }
-            
-        }
-
-        if (Input.GetKey(KeyCode.W) && extraJumps > 0)
-        {
-            rb.velocity = Vector2.up * jumpForce;
-            extraJumps = extraJumps - 1;
-        }
-        else if(Input.GetKey(KeyCode.W) && extraJumps == 0 && isGrounded == true)
-        {
-            rb.velocity = Vector2.up * jumpForce;
-        }
+      
+       
 
         if (Input.GetKeyUp(KeyCode.W))
         {
             isJumping = false;
-            doubleJump = false;
+            
         }
 
 

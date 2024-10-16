@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Health31 : MonoBehaviour
 {
-    [SerializeField] private int health = 100;
+   public int health = 100;
  
     private int MAX_HEALTH = 100;
     public bool effectedByFallDamage;

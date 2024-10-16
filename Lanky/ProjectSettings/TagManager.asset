@@ -21,6 +21,8 @@ TagManager:
   - portal1
   - Enemy
   - shield
+  - Limit
+  - Button
   layers:
   - Default
   - TransparentFX
@@ -40,9 +42,9 @@ TagManager:
   - EnemyPlat
   - INVISWALL
   - PlatForm
-  - 
-  - 
-  - 
+  - Button
+  - LONGWALL
+  - BUTTONCHECK
   - 
   - 
   - 
