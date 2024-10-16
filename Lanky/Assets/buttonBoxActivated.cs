@@ -37,7 +37,6 @@ public class buttonBoxActivated : MonoBehaviour
         if (collision.gameObject.CompareTag("Button"))
         {
             button.SetActive(false);
-            camSwitch.SetActive(true);
             doorCanMove = true;
         }
     }

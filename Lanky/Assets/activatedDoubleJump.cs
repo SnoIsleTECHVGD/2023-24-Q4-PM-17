@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class activatedDoubleJump : MonoBehaviour
 {
     public GameObject thisObject;
+    public Image bottleUI;
     void Start()
     {
         
@@ -24,6 +26,7 @@ public class activatedDoubleJump : MonoBehaviour
         }
        
         thisObject.SetActive(false);
+        bottleUI.enabled = true;
 
 
     }

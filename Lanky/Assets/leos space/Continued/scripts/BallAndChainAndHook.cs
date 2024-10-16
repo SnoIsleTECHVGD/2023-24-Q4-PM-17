@@ -28,6 +28,7 @@ public class BallAndChainAndHook : MonoBehaviour
 
     private float stringThreshold = 0.1f;
     private bool hookComplete;
+    public Rigidbody2D Rigidbody2D;
 
     void Start()
     {
@@ -49,7 +50,7 @@ public class BallAndChainAndHook : MonoBehaviour
         if(AttackArea.isHooked && PlayerControllerAndAnimator.isGrounded)
         {
             Hook();
-            player.GetComponent<health>().Damage(0);
+            player.GetComponent<Health>().Damage(0);
 
         }
 
@@ -107,6 +108,7 @@ public class BallAndChainAndHook : MonoBehaviour
     void Extension()
     {
         DISABLE.SetBool("isRunning",false);
+        Rigidbody2D.velocity = new Vector2 (0, 0);
         FREEZE.GetComponent<PlayerControllerAndAnimator>().enabled = false;
         float exceleration = movespeed * Time.deltaTime;
 

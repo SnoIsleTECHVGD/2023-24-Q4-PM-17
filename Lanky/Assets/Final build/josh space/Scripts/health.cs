@@ -5,12 +5,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class health : MonoBehaviour
+public class Health : MonoBehaviour
 {
 
     private Rigidbody2D rb;
     public GameObject player;
-    public int HealthP;
+    public int HealthP = 5;
     public int NumOfHearts;
     public Image[] hearts;
     public Sprite fullHeart;
@@ -57,10 +57,10 @@ public class health : MonoBehaviour
         private void OnCollisionEnter2D(Collision2D collision)
         {
 
-            if (collision.gameObject.tag == "dmgthing")
+            if (collision.gameObject.tag == "enemy")
             {
             // StartCoroutine(Waittime)(2000);
-            HealthP -= 1;
+              HealthP = HealthP - 1;
 
             }
 
@@ -74,9 +74,9 @@ public class health : MonoBehaviour
     
 
 
-    internal void Damage(int damage)
+    public void Damage(int damage)
     {
-        
+        HealthP -= damage;
     }
 
     private void OnTriggerEnter2D(Collider2D trigger2D)

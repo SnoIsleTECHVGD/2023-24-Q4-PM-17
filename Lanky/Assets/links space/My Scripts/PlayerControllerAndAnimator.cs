@@ -36,63 +36,63 @@ public class PlayerControllerAndAnimator : MonoBehaviour
     private float velocity;
     private bool wasGrounded;
     public static bool doubleJumpObtained;
-    
-    
+
+
 
     private Animator anim;
-    
+
     private void Start()
     {
         anim = GetComponent<Animator>();
         rb = GetComponentInParent<Rigidbody2D>();
-       
 
-        
+
+
     }
 
     private void Update()
     {
-        
+
         isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
 
-        if(isGrounded != true)
+        if (isGrounded != true)
         {
-            canLand = true; 
+            canLand = true;
         }
+
+       // if (isGrounded && !wasGrounded)
         
-        if( isGrounded && !wasGrounded)
-        {
-            if(canLand)
-            {
-             canLand = false;
-             landCount += 1;
-             TumbleCount(landCount);
-             StartCoroutine(WaitASec(2.3f));
+            //if (canLand)
             
-            }
+               // canLand = false;
+                //landCount += 1;
+                //TumbleCount(landCount);
+               // StartCoroutine(WaitASec(2.3f));
+
             
-        }
-     
+
+        
+
         wasGrounded = isGrounded;
 
-        if ( Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W))
         {
-            if(isGrounded == true || doubleJump && doubleJumpObtained)
+            if (isGrounded == true || doubleJump && doubleJumpObtained)
             {
-              rb.velocity = Vector2.up * jumpForce;
-              anim.SetTrigger("takeOff");
-              isJumping = true;
-              jumpTimeCounter = 0.1f;
-              rb.velocity = Vector2.up * jumpForce;
-              doubleJump = !doubleJump;
-                
+                rb.velocity = Vector2.up * jumpForce;
+                anim.SetTrigger("takeOff");
+                isJumping = true;
+                jumpTimeCounter = 0.1f;
+                rb.velocity = Vector2.up * jumpForce;
+                doubleJump = !doubleJump;
+
             }
         }
         if (isGrounded == true && !Input.GetKey(KeyCode.W))
         {
             doubleJump = false;
         }
-           
+
 
         if (isGrounded == true)
         {
@@ -100,31 +100,31 @@ public class PlayerControllerAndAnimator : MonoBehaviour
             anim.SetBool("isJumping", false);
             extraJumps = 2;
             shield.canShield = true;
-            
 
-            
+
+
         }
         else
         {
             anim.SetBool("isJumping", true);
-           shield.canShield = false;
+            shield.canShield = false;
         }
 
 
-      
-       
+
+
 
         if (Input.GetKeyUp(KeyCode.W))
         {
             isJumping = false;
-            
+
         }
 
 
         float moveInput = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
-        
-       
+
+
 
         if (moveInput == 0)
         {
@@ -149,12 +149,12 @@ public class PlayerControllerAndAnimator : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             Attack();
-           anim.SetBool("isAttacking", true);
+            anim.SetBool("isAttacking", true);
 
         }
-        
-  
-        
+
+
+
         else
         {
             anim.SetBool("isAttacking", false);
@@ -164,7 +164,7 @@ public class PlayerControllerAndAnimator : MonoBehaviour
         {
             timer += Time.deltaTime;
 
-            if(timer >= timeToAttack)
+            if (timer >= timeToAttack)
             {
                 timer = 0;
                 isAttacking = false;
@@ -175,7 +175,7 @@ public class PlayerControllerAndAnimator : MonoBehaviour
 
 
 
-      
+
     }
 
     void Flip()
@@ -198,43 +198,43 @@ public class PlayerControllerAndAnimator : MonoBehaviour
         {
             isJumping = false;
         }
+
+    }
+
+
+    //private void TumbleCount(float landcount)
+    
+       // if (landcount == 3)
         
-    }
+            //anim.SetBool("CanTumble", true);
+          //  anim.SetBool("isJumping", false);
+           // anim.SetBool("isRunning", false);
+
+           // landCount = 0;
 
 
-    private void TumbleCount (float landcount)
-    {
-        if(landcount == 3)
-        {
-            anim.SetBool("CanTumble", true);
-            anim.SetBool("isJumping", false);
-            anim.SetBool("isRunning", false);
-
-            landCount = 0;
-          
-
-        }
-      
-    }
-
-
-
-    IEnumerator WaitASec(float secs)
-    {
         
-        yield return new WaitForSeconds(secs);
-        ResetTumble(landCount);
-     
-    }
-    private void ResetTumble ( float landcount)
-    {
-        if(landcount == 0)
-        {
+
+    
+
+
+
+    //IEnumerator WaitASec(float secs)
+    // {
+
+    // yield return new WaitForSeconds(secs);
+    // ResetTumble(landCount);
+
+}  
+   // private void ResetTumble ( float landcount)
+   // {
+       // if(landcount == 0)
+      //  {
           
-            anim.SetBool("CanTumble", false);
-        }
-    }
+          //  anim.SetBool("CanTumble", false);
+       // }
+  ///  }
 
    
-}
+
 

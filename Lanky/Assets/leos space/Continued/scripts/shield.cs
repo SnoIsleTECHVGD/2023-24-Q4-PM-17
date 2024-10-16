@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class shield : MonoBehaviour
 {
-    public Health31 disableHealth;
+    public Health disableHealth;
     public GameObject theShield;
     public static bool canShield = false;
     public PlayerControllerAndAnimator movement;

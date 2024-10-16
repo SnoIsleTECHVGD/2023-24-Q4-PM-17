@@ -7,16 +7,19 @@ public class killBox : MonoBehaviour
 
 {
 
-    public Health31 playerHealth;
+    public Health playerHealth;
     void Update()
     {
         
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Health health = collision.GetComponent<Health>();
+
         if ( collision.gameObject.CompareTag("player"))
         {
-            playerHealth.health = 0;
+            health.Damage(1);
+            playerHealth.Damage(100);
         }
     }
 }

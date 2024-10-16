@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Touchdamage : MonoBehaviour
 {
-    health health;
+  
     public GameObject player;
     private Rigidbody2D rb;
    
     
     void Awake()
     {
-        health = player.GetComponent<health>();
-        player = GameObject.FindGameObjectWithTag("player");
+        //health = player.GetComponent<Health>();
+       // player = GameObject.FindGameObjectWithTag("player");
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {

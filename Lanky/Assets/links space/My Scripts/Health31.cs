@@ -6,14 +6,15 @@ using UnityEngine;
 
 public class Health31 : MonoBehaviour
 {
-   public int health = 100;
+   public int health = 45;
  
-    private int MAX_HEALTH = 100;
+    private int MAX_HEALTH = 5;
     public bool effectedByFallDamage;
     public int ammountOfFallDamage;
     private GameObject enemy;
     private Vector2 enemyAcceleration;
     private bool maxHeightReached;
+    public Health PlayerEnemy;
   
 
     // Update is called once per frame
@@ -34,13 +35,15 @@ public class Health31 : MonoBehaviour
             throw new System.ArgumentOutOfRangeException("Cant have negative damage");
         }
 
-        this.health -= amount;
+       this.health -= amount;
 
         if(health <= 0)
         {
             Die();
         }
     }
+
+
 
     private void Die()
     {
@@ -52,11 +55,11 @@ public class Health31 : MonoBehaviour
     {
        
         
-        if( collision.gameObject.tag == "Enemy")
+        if( collision.gameObject.tag == "player")
        {
+            PlayerEnemy.Damage(1);
             enemy = collision.gameObject;
             enemyAcceleration = enemy.GetComponent<Rigidbody2D>().velocity;
-            Damage(10);
             
        
        }

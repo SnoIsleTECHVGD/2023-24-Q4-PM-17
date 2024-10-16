@@ -15,9 +15,9 @@ public class KeyNumberTwo : MonoBehaviour
             Debug.Log("keyObtained!");
             openWithKey.KeyObtained = true;
 
+          KEY.SetActive(false);
         }
 
-        KEY.SetActive(false);
         
     }
 }

@@ -12,12 +12,14 @@ public class WarpPoint : MonoBehaviour
     public GameObject cam2;
     public GameObject cam3;
     public GameObject arrowUp;
+    public GameObject crateTut;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         player.transform.position = Warp;
 
         if(CompareTag("portal1"))
         {
+            crateTut.SetActive(true);
           cam1.SetActive(false);
             cam2.SetActive(true);
             cam2.tag = ("MainCamera");
