@@ -23,7 +23,7 @@ public class itemdespawn : MonoBehaviour
         if (trigger2D.gameObject.tag == "player")
         {
            
-            Debug.Log("you have healed");
+           
             Destroy(gameObject);
 
         }

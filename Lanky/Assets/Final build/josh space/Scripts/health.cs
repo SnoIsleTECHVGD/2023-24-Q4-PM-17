@@ -63,8 +63,16 @@ public class Health : MonoBehaviour
               HealthP = HealthP - 1;
 
             }
+          if (collision.gameObject.tag == "healthing")
+          {
 
-        }
+            Debug.Log("you have healed");
+
+            HealthP = NumOfHearts;
+
+          }
+
+    }
   //  private IEnumerator Waittime()
    // {
     //    yield return new WaitForSeconds(2000); 
@@ -79,16 +87,7 @@ public class Health : MonoBehaviour
         HealthP -= damage;
     }
 
-    private void OnTriggerEnter2D(Collider2D trigger2D)
-    {
-        if (trigger2D.gameObject.tag == "healthing")
-        {
-
-            Debug.Log("you have healed");
-            HealthP = NumOfHearts;
-
-        }
-    }
+   
 
 
 

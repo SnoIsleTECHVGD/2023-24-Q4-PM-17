@@ -23,10 +23,10 @@ public class activatedDoubleJump : MonoBehaviour
         if (collision.gameObject.CompareTag("player"))
         {
             PlayerControllerAndAnimator.doubleJumpObtained = true;
+            bottleUI.gameObject.SetActive(true);
+             thisObject.SetActive(false);
         }
        
-        thisObject.SetActive(false);
-        bottleUI.enabled = true;
 
 
     }

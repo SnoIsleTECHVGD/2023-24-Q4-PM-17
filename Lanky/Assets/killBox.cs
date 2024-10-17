@@ -18,7 +18,6 @@ public class killBox : MonoBehaviour
 
         if ( collision.gameObject.CompareTag("player"))
         {
-            health.Damage(1);
             playerHealth.Damage(100);
         }
     }
